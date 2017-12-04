@@ -1,15 +1,16 @@
 package cajero;
 import atm.*;
-import excepciones.MiExATM;
+import excepciones.MiATMException;
 import java.util.*;
 
 /**
  * Punto principal para el cajero automatico.
  * @author Anthony Hurtado
- * @version 1.0
+ * @version 1.0.0
  */
 public class Cajero {
     /**
+     * Método inicial del programa.
      * @param args Argumentos iniciales.
      */
     public static void main(String[] args) {
@@ -22,7 +23,7 @@ public class Cajero {
         // Instancias de Clase        
         Scanner scan = new Scanner(System.in);
         Cliente cliente;
-        Banco banco = new Banco("Banco de Venezuela", "Chacao - Torre EXA");
+        Banco banco = new Banco("Banesco", "Chacao - Torre EXA");
         Operaciones op = new Operaciones();
         
         // Bienvenida del ATM
@@ -73,8 +74,8 @@ public class Cajero {
                         } else {
                             System.out.println("Saldo insuficiente.");
                         }
-                    } catch (MiExATM me) {
-                        System.out.println("Error: "+ me);
+                    } catch (MiATMException me) {
+                        System.out.println("Error: "+ me.getMessage());
                     }
                     break;
                 case 3:
@@ -89,8 +90,8 @@ public class Cajero {
                         clave = scan.nextInt();
                         cliente = op.cambiarClave(cliente, clave);
                         System.out.println("Cambio exitoso de la clave. Su nueva clave es: "+ cliente.getClave());
-                    } catch(MiExATM me) {
-                        System.out.println("Error: "+ me);
+                    } catch(MiATMException me) {
+                        System.out.println("Error: "+ me.getMessage());
                     }
                     break;
             }

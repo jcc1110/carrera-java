@@ -1,9 +1,9 @@
 package atm;
 
 /**
- * Clase Cliente
+ * Clase principal de los datos del Cliente
  * @author Anthony Hurtado
- * @version 1.0
+ * @version 1.0.0
  */
 public class Cliente {
     /**
@@ -37,7 +37,7 @@ public class Cliente {
     private int saldo;
     
     /**
-     * Constructor de la clase Cliente
+     * Constructor de la clase Cliente inicializando los valores.
      * @param _nombre Nombre del cliente
      * @param _apellido Apellido del cliente
      * @param _tipoCuenta Tipo de cuenta del cliente
@@ -54,30 +54,60 @@ public class Cliente {
         this.saldo = _saldo;
     }
     
+    /**
+     * Obtener el nombre completo del cliente.
+     * @return String Nombre completo del cliente.
+     */
     public String getNombreCompleto() {
         return this.nombre +" "+ this.apellido;
     }
     
+    /**
+     * Obtener el número del cuenta del cliente.
+     * @return int Número de cuenta del cliente.
+     */
     public int getNumeroCuenta() {
         return this.numeroCuenta;
     }
     
+    /**
+     * Obtener el tipo de cuenta del cliente.
+     * @return String Tipo de cuenta del cliente.
+     */
     public String getTipoCuenta() {
         return this.tipoCuenta;
     }
 
+    /**
+     * Obtener la clave del cliente.
+     * @return int Clave del cliente.
+     */
     public int getClave() {
         return this.clave;
     }
     
-    public int setClave(int _clave) {
-        return this.clave = _clave;
-    }
-
+    /**
+     * Obtener el saldo del cliente.
+     * @return int saldo del cliente
+     */
     public int getSaldo() {
         return this.saldo;
     }
     
+    /**
+     * Establecer la clave del cliente.
+     * @param _clave Nueva clave del cliente
+     * @return int Nueva clave del cliente
+     */
+    public int setClave(int _clave) {
+        return this.clave = _clave;
+    }
+    
+    /**
+     * Establecer saldo del cliente.
+     * @param _saldo Nuevo saldo del cliente
+     * @return int Nuevo Saldo del cliente
+     */
     public int setSaldo(int _saldo) {
         return this.saldo = _saldo;
     }

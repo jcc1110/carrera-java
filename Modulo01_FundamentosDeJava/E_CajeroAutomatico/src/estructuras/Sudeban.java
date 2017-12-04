@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Clase padre para establecer lineamientos para los bancos.
  * @author Anthony Hurtado
- * @version 1.0
+ * @version 1.0.0
  */
 public abstract class Sudeban {
     /**
@@ -21,7 +21,7 @@ public abstract class Sudeban {
     /**
      * Base de datos de clientes.
      */
-    public ArrayList<Cliente> bdClientes;
+    protected ArrayList<Cliente> bdClientes;
     
     /**
      * Constructor de la clase Sudeban

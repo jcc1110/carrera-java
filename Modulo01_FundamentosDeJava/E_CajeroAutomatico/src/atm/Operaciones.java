@@ -1,11 +1,11 @@
 package atm;
 import estructuras.ATM;
-import excepciones.MiExATM;
+import excepciones.MiATMException;
 
 /**
  * Clase de operaciones para el ATM.
  * @author Anthony Hurtado
- * @version 1.0
+ * @version 1.0.0
  */
 public class Operaciones implements ATM {
     @Override
@@ -15,11 +15,11 @@ public class Operaciones implements ATM {
     }
 
     @Override
-    public Cliente retiro(Cliente cliente, int _monto) throws MiExATM {
+    public Cliente retiro(Cliente cliente, int _monto) throws MiATMException {
         int saldo = cliente.getSaldo();
         saldo = saldo - _monto;
         if (saldo < 100) {
-            throw new MiExATM("El saldo no puede ser menor Bs. 100");
+            throw new MiATMException("El saldo no puede ser menor Bs. 100");
         }
         cliente.setSaldo(saldo);
         return cliente;
@@ -34,11 +34,11 @@ public class Operaciones implements ATM {
     }
 
     @Override
-    public Cliente cambiarClave(Cliente cliente, Integer _clave) throws MiExATM {
+    public Cliente cambiarClave(Cliente cliente, Integer _clave) throws MiATMException {
         if (_clave.toString().length() == 4) {
             cliente.setClave(_clave); 
         } else {
-            throw new MiExATM("La clave debe contener solo 4 números enteros.");
+            throw new MiATMException("La clave debe contener solo 4 números enteros.");
         }
         return cliente;
     }

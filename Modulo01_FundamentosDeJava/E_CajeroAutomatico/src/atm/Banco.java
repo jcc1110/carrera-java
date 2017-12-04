@@ -3,13 +3,16 @@ import estructuras.Sudeban;
 import java.util.ArrayList;
 
 /**
- * Clase de la cuenta bancaria.
+ * Clase de gestión del banco y cuenta bancaria.
  * @author Anthony Hurtado
- * @version 1.0
+ * @version 1.0.0
+ * @see Sudeban Herencia para aplicar las regulaciones al banco
  */
 public class Banco extends Sudeban {
     /**
      * Constructor de la clase Sudeban y Banco inicializando la lista de clientes.
+     * @param _nombreBanco Nombre del banco actual
+     * @param _ubicacionBanco Dirección del banco actual
      */
     public Banco(String _nombreBanco, String _ubicacionBanco) {
         super(_nombreBanco, _ubicacionBanco);
@@ -30,10 +33,18 @@ public class Banco extends Sudeban {
         return cliente;
     }
     
+    /**
+     * Obtener el nombre del banco.
+     * @return String Nombre del banco
+     */
     public String getNombre() {
         return super.nombre;
     }
-
+    
+    /**
+     * Obtener la ubicación del banco.
+     * @return String Ubicación del banco
+     */
     public String getUbicacion() {
         return super.ubicacion;
     }
