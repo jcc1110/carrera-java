@@ -34,3 +34,6 @@ nbdist/
 .nb-gradle/
 
 # End of https://www.gitignore.io/api/java,netbeans
+/Modulo01_FundamentosDeJava/E_CalculoAreaPoligonos/nbproject/private/
+/Modulo01_FundamentosDeJava/ClasesAnidadas/nbproject/private/
+/Modulo01_FundamentosDeJava/Fechas/nbproject/private/
