@@ -1,6 +1,7 @@
 package com.poligono;
 
 public abstract class Poligono {
+    // Atributos
     private double a;
     private double b;
 
@@ -20,5 +21,6 @@ public abstract class Poligono {
         this.b = b;
     }
     
+    // Método a implementar
     public abstract double calcularArea();
 }
