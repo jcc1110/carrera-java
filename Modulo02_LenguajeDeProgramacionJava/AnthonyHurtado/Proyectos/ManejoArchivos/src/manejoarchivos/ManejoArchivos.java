@@ -4,7 +4,7 @@ import static utileria.Archivos.*;
 public class ManejoArchivos {
     public static void main(String[] args) {
         // Ruta del archivo
-        String ruta = "/home/instructor/Descargas/prueba.pdf";
+        String ruta = "RUTA_DEL_ARCHIVO";
         
         // Operaciones con el archivo
         crear(ruta);
