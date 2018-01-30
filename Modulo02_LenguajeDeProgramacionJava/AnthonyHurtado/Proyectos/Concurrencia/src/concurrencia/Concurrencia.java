@@ -2,10 +2,14 @@ package concurrencia;
 
 public class Concurrencia {
     public static void main(String[] args) {
+        // Creo un objeto Contador
         Contador contador = new Contador(); 
-        HiloContador h1 = new HiloContador("HiloUno", contador);
-        HiloContador h2 = new HiloContador("HiloDos", contador);
         
+        // Creo dos objeto de tipo HiloContador
+        HiloContador h1 = new HiloContador("PrimerHilo", contador);
+        HiloContador h2 = new HiloContador("SegungoHilo", contador);
+        
+        // Inicio cada hilo
         h1.start();
         h2.start();
     }
