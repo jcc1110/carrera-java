@@ -26,7 +26,7 @@ public class HiloContador extends Thread {
                     valorContador = this.contador.getContador();
                     
                     // Detengo por un 1 milisegundo la ejecución del hilo
-                    Thread.sleep(1);
+                    Thread.sleep(1000);
                     
                     // Establezco el valor de la propiedad
                     this.contador.setContador(valorContador + 1);
