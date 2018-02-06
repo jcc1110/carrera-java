@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package localizacion;
-
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -130,16 +129,26 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEspanolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEspanolActionPerformed
+       // Cambiando el idioma a español
        Locale loc = new Locale("es","ES");
        Locale.setDefault(loc);
+       
+       // Obteniendo el archivo para traducir
        ResourceBundle rb = ResourceBundle.getBundle("localizacion/Bundle", loc);
+       
+       // Llamando al método
        cambiarIdioma(rb);       
     }//GEN-LAST:event_btnEspanolActionPerformed
 
     private void btnInglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInglesActionPerformed
+        // Cambiando el idioma a ingles
         Locale loc = new Locale("en","US");
         Locale.setDefault(loc);
+        
+        // Obteniendo el archivo para traducir
         ResourceBundle rb = ResourceBundle.getBundle("localizacion/Bundle_en_US", loc);
+        
+        // Llamando al método
         cambiarIdioma(rb);
     }//GEN-LAST:event_btnInglesActionPerformed
 
@@ -179,6 +188,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     public void cambiarIdioma(ResourceBundle rb)  {
+        // Establezco los componentes del jFrame para cambiar el texto
         lbUsuario.setText(rb.getString("MainFrame.lbUsuario.text"));
         lbClave.setText(rb.getString("MainFrame.lbClave.text"));
         btnEspanol.setText(rb.getString("MainFrame.btnEspanol.text"));

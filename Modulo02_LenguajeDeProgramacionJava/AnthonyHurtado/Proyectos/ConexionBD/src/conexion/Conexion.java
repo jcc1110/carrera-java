@@ -2,25 +2,29 @@ package conexion;
 import java.sql.*;
 
 public class Conexion {
-    public static void main(String[] args) {   
-        
+    public static void main(String[] args) {        
         try {
+            // Incluyendo la libreria al proyecto
             System.out.println("Conectando...");
             Class.forName("com.mysql.jdbc.Driver");
-            
+
+            // Realizando la conexión a la base de datos
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");                        
             System.out.println("Conexión exitosa");
-            
+
+            // Preparando una consulta
             Statement sta = con.createStatement();
             ResultSet rs = sta.executeQuery("SELECT * FROM Usuario");
-            
+
+            // Recorriendo el resultado
             while(rs.next()) {
+                // Imprimiento cada registro
                 System.out.println(rs.getInt("id") + " - " + rs.getString("nombre") + " - " + rs.getString("clave"));
             }
             
-            int resultado = sta.executeUpdate("INSERT INTO Usuario (id, nombre, clave) VALUES (4, '3dsfdsf', '1234')");
-            System.out.println("Registro " + resultado);
-            
+            // Creando un nuevo registro en la BD
+            int resultado = sta.executeUpdate("INSERT INTO Usuario (id, nombre, clave) VALUES (2, 'admin', '123456789')");
+            System.out.println("Resultado: " + resultado);
         } catch (SQLException se) {
             System.out.println(se.getMessage());
         } catch (ClassNotFoundException ce) {
@@ -28,6 +32,5 @@ public class Conexion {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
     }
 }
