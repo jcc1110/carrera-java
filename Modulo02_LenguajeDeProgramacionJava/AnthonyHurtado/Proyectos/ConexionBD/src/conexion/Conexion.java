@@ -6,14 +6,17 @@ public class Conexion {
         try {
             // Incluyendo la libreria al proyecto
             System.out.println("Conectando...");
-            Class.forName("com.mysql.jdbc.Driver");
+            //Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
 
             // Realizando la conexión a la base de datos
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");                        
+            Connection con = DriverManager.getConnection("jdbc:derby://127.0.0.1:1527/APP", "app", "");                        
             System.out.println("Conexión exitosa");
 
             // Preparando una consulta
             Statement sta = con.createStatement();
+            
+            // Consulta a la base de datos
             ResultSet rs = sta.executeQuery("SELECT * FROM Usuario");
 
             // Recorriendo el resultado
