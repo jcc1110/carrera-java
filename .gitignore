@@ -1,4 +1,4 @@
-
+﻿
 # Created by https://www.gitignore.io/api/java,netbeans
 
 ### Java ###
@@ -18,7 +18,6 @@
 *.jar
 *.war
 *.ear
-*.zip
 *.tar.gz
 *.rar
 
@@ -81,3 +80,6 @@ nbdist/
 /Modulo02_LenguajeDeProgramacionJava/ErnestoMurrugarra/Proyectos/JavaApplication58/nbproject/private/
 /Modulo02_LenguajeDeProgramacionJava/AnthonyHurtado/Proyectos/E_CajeroAutomatico_JS/nbproject/private/
 /Modulo02_LenguajeDeProgramacionJava/AnthonyHurtado/Proyectos/E_CajeroAutomatico_Base/nbproject/private/
+/Modulo02_LenguajeDeProgramacionJava/AnthonyHurtado/Evaluación/Modulo2_Ricardo_Perez/nbproject/private/
+/Modulo02_LenguajeDeProgramacionJava/AnthonyHurtado/Evaluación/Prototipo/nbproject/private/
+/Modulo02_LenguajeDeProgramacionJava/AnthonyHurtado/Evaluación/E_CajeroAutomatico_Base/nbproject/private/
