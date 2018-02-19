@@ -22,21 +22,19 @@ public class SqlEx {
      */
     public static void main(String[] args) {       
         try {
-             // Declaración del driver JDBC
+            // Declaración del driver JDBC
             String driver = "org.mariadb.jdbc.Driver";
 
-            String url = "jdbc:mysql://localhost/java_example";
+            String url = "jdbc:mysql://localhost:3306/java_example";
             // Verificamos que el driver exista
             Class.forName(driver);
             
             // Creamos la conexión
-            Connection conn = DriverManager.getConnection(url, "root", "");
+            Connection conn = DriverManager.getConnection(url, "instructor", "");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(SqlEx.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(SqlEx.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
     }
-    
 }
