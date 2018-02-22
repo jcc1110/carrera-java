@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Conversión de Datos</title>
+    </h:head>
+    <h:body>
+      <!-- ConvertNumber -->
+      <h2>Ejemplo de ConvertNumber</h2>
+      <table border="1" cellspacing="2" cellpadding="2">
+         <tr><th>Parametro</th><th>Valor</th><th>Salida</th></tr>
+         <tr><td>minFractionDigits="2"</td><td>100,12345</td>
+         <td>
+            <h:outputText value="100,12345">
+                <f:convertNumber minFractionDigits="1" maxFractionDigits="3" />
+            </h:outputText>
+         </td></tr>
+         <tr><td>pattern="#000.00"</td><td>100,12345</td>
+         <td>
+            <h:outputText value="100,12345">
+               <f:convertNumber pattern="#000.00" />
+            </h:outputText>
+         </td></tr>
+         <tr><td>type="percent"</td><td>100,12345%</td>
+         <td>
+            <h:outputText value="100,12345%">
+               <f:convertNumber type="percent" />
+            </h:outputText>
+         </td></tr>
+      </table>
+      
+      <!-- ConvertDateTime -->
+      <h2>Ejemplo de ConvertDateTime</h2>
+      <h:form>
+         <h:inputText id="txtDate" value="#{ persona.fecha }" label="Fecha">
+            <f:convertDateTime pattern="dd-mm-yyyy" />
+         </h:inputText>
+         <h:commandButton value="submit" action="resultado"/>
+      </h:form>
+      <br/>
+      <h:message for="txtDate" style="color:red" />
+      <h:outputText value="12-01-2012">
+         <f:convertDateTime pattern="dd-mm-yyyy" />
+      </h:outputText>
+      
+      <!-- Custom Converter -->
+      <h2>Convertidor Personalizado de URL</h2>
+      <h:form>
+          <h:inputText id="txtUrl" value="#{ persona.url }" label="URL">
+            <f:converter converterId="main.UrlConverter" />
+         </h:inputText>		 
+         <h:commandButton value="submit" action="resultado"/>
+         <h:message for="txtUrl" style="color:red" />
+      </h:form>
+    </h:body>
+</html>
