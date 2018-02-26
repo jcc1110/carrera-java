@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h3>Asignación de datos al objeto: </h3>
+        <h:form>
+            <h:outputLabel value="Nombres: " />
+            <h:inputText value="#{personBean.p.fullName}" /><br/>
+            <h:outputLabel value="Cédula: " />
+            <h:inputText value="#{personBean.p.ci}" /><br/>
+            <h:outputLabel value="Correo: " />
+            <h:inputText value="#{personBean.p.email}" /><br/>
+            <h:outputLabel value="Clave:  " />
+            <h:inputSecret value="#{personBean.p.password}" /><br/><br/>
+            <h:commandButton value="ENVIAR" />
+        </h:form>
+        
+        <h3>Muestra de datos instanciados en el objeto: </h3>
+        #{personBean.p.fullName}<br/>
+        #{personBean.p.ci}<br/>
+        #{personBean.p.email}<br/>
+        #{personBean.p.password}<br/>
+    </h:body>
+</html>
+
