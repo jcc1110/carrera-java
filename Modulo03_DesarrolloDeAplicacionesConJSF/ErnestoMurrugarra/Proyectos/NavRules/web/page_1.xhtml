@@ -3,15 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>MI primera web JSF</title>
+        <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Hello from Facelets
-        
-        <!-- Guardando información en el atributo del ManagedBean -->
-        #{mbe.setName("Gabriel Jimenez")}
-        
-        <!-- Mostrando el valor del atributo del ManagedBean -->
-        <p>#{mbe.name}</p>
+        <h1>Pàgina #1</h1>
+        <h:form>
+            <h:commandButton value="Volver" action="index" />
+        </h:form>
     </h:body>
 </html>
+
