@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h5>Formulario de empleado:</h5>
+        <h:form>
+            <!-- Nombre -->
+            <h:outputLabel value="Nombre completo: " />
+            <h:inputText value="#{ emp.name }" id="txtName" label="Nombre completo...">
+                <f:validateRequired />
+                <f:validateLength minimum="0" maximum="50" />
+            </h:inputText><br />
+            <h:message  for="txtName" style="color: red; background-color: #C0C0C0" />
+            
+            <!-- Edad -->
+            <br/>
+            <h:outputLabel value="Edad: " />
+            <h:inputText id="txtAge" value="#{ emp.age }" label="Edad">
+                <f:validateLongRange minimum="18" maximum="50" />
+            </h:inputText><br/>
+            <h:message for="txtAge" style="color:red" />
+            
+            <!-- Sueldo -->
+            <br/>
+            <h:outputLabel value="Salario: " />
+            <h:inputText id="txtSalary" value="#{ emp.salary }" label="Salario">
+                <f:validateDoubleRange minimum="100.00" maximum="500.00" />
+            </h:inputText><br/>
+            <h:message for="txtSalary" style="color:red" />
+            
+            <!-- Correo -->
+            <br/>
+            <h:outputLabel value="Correo: " />
+            <h:inputText id="txtEmail" value="#{ emp.email }" label="Correo">
+                <f:validateRegex pattern="^\S+@\S+$" />
+            </h:inputText><br/>
+            <h:message for="txtEmail" style="color:red" />
+            
+            <!-- Web -->
+            <br/>
+            <h:outputLabel value="Sitio web: " />
+            <h:inputText id="txtURL" value="#{ emp.web }" label="SitioWeb" >
+                <f:validator validatorId="com.validator.UrlValidator" />
+            </h:inputText><br/>
+            <h:message for="txtURL" style="color:red" />
+            <br/>
+            
+            <h:commandButton value="ENVIAR" action="result" />
+        </h:form>
+    </h:body>
+</html>
+
