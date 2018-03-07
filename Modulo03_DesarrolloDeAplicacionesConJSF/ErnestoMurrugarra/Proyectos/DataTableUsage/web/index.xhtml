@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Uso de DataTable</title>
+        <h:outputStylesheet library="css" name="styles.css" />
+    </h:head>
+    <h:body>
+        <h1>Información</h1>
+        <hr/>
+        <!-- Formulario para agregar empleados -->
+        <h:form>
+            <!-- FORMULARIO -->
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nombre: " />
+                <h:inputText value="#{ eb.employeeObj.name }" label="Nombre">
+                    <f:validateRequired />
+                </h:inputText>
+                
+                <h:outputLabel value="Apellido: " />
+                <h:inputText value="#{ eb.employeeObj.lastName }" label="Apellido">
+                    <f:validateRequired />
+                </h:inputText>
+
+                <h:outputLabel value="Género: " />
+                <h:selectOneMenu value="#{ eb.employeeObj.gender }" label="Género">
+                    <f:selectItem itemValue="" itemLabel="" />
+                    <f:selectItem itemValue="M" itemLabel="Masculino" />
+                    <f:selectItem itemValue="F" itemLabel="Femenino" />
+                    <f:validateRequired />
+                </h:selectOneMenu>
+                
+                <h:outputLabel value="Salario: " />
+                <h:inputText value="#{ eb.employeeObj.salary }" label="Salario">
+                    <f:validateRequired />
+                </h:inputText>
+                
+                <h:commandButton value="Guardar" actionListener="#{ eb.addEmployee }" />
+            </h:panelGrid>
+        </h:form>
+            
+        <!-- DATOS -->
+        <br/>
+        <h:form>
+            <!-- Atributos necesarios para que el dataTable funcione (en este ejemplo) -->
+            <h:dataTable 
+                        value="#{ eb.employeesLst }"
+                        rendered="#{ not empty eb.employeesLst }"
+                        var="empleado" 
+                        styleClass="employeeTable"
+                        headerClass="employeeTableHeader"
+                        rowClasses="employeeTableOddRow, employeeTableEvenRow">                
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    #{ empleado.name }
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Apellido</f:facet>
+                    #{ empleado.lastName }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Género</f:facet>
+                    #{ empleado.gender }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Salario</f:facet>
+                    #{ empleado.salary }
+                </h:column>     
+                <h:column>
+                    <f:facet name="header">Acciones</f:facet>
+                    <h:commandLink value="Eliminar" actionListener="#{ eb.deleteEmployee(empleado) }" />                  
+                </h:column>
+            </h:dataTable>            
+        </h:form>
+    </h:body>
+</html>
