@@ -33,6 +33,7 @@ public class LoginBean implements Serializable {
     
     public String login() {
         String result;
+        System.out.println("Hola mundo: "+this.getUsername());
 
         if ("anthony".equals(this.getUsername().toLowerCase()) && "123456".equals(this.getPassword().toLowerCase())) {
             result = "success";
