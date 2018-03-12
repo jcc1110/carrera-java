@@ -1,4 +1,5 @@
 package controllers;
+import db.DataAccessPerson;
 import java.io.Serializable;
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.application.FacesMessage;
@@ -13,6 +14,7 @@ public class LoginBean implements Serializable {
     private static final long serialVersionUID = 1L;
     private String username;
     private String password;
+    private DataAccessPerson dap;
 
     // Métodos
     public String getUsername() {
@@ -33,15 +35,21 @@ public class LoginBean implements Serializable {
     
     public String login() {
         String result;
-        System.out.println("Hola mundo: "+this.getUsername());
-
-        if ("anthony".equals(this.getUsername().toLowerCase()) && "123456".equals(this.getPassword().toLowerCase())) {
+        boolean isUser;
+        dap = new DataAccessPerson();
+        
+        System.out.println(this.getUsername() + " - " + this.getPassword());
+        
+        // Valido el usuario ingresado
+        isUser = dap.validateUser(this.getUsername(), this.getPassword());
+        
+        if (isUser) {
             result = "success";
             HttpSession session = this.getCurrentSession();
             session.setAttribute("username", this.getUsername());
         } else {
             result = "error";
-            FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_WARN, "Usuario o contraseña incorrectos", "");
+            FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario o contraseña incorrectos", "");
             FacesContext.getCurrentInstance().addMessage(null, fm);            
         }
 
