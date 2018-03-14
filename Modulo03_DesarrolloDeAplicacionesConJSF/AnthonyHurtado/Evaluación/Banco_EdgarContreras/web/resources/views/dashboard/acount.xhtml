@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href=".../css/master.css"></link>
+    </head>
+    <body>
+        <div>Movimientos</div>
+        
+        <h:form>
+            <h:dataTable value="#{movimientosListados.mostrarData()}" var="mov" id="zona">
+                                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Tipo de Transaccion"/>
+                    </f:facet>
+                    <hr/>
+                    <h:outputLabel value="#{mov.tipo_movimiento}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Monto"/>
+                    </f:facet>
+                     <hr/>
+                    <h:outputLabel value="#{mov.monto}"/>
+                </h:column>                
+
+            </h:dataTable>
+        </h:form>
+    </body>
+</html>

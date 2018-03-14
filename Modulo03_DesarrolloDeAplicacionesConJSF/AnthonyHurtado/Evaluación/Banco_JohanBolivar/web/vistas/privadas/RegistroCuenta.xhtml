@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../resources/plantillas/bienvenida.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content" >
+        <h:form>
+            <!-- FORMULARIO -->
+            <h:panelGrid columns="2" border="1">
+                <h:outputLabel value="Cuenta " />
+                <h:inputText value="#{ beanConexion.num_cuenta }" label="cuenta">
+                    <f:validateRequired />
+                </h:inputText>
+                
+                <h:outputLabel value="Nombre: " />
+                <h:inputText value="#{beanConexion.nombre }" label="nombre">
+                    <f:validateRequired />
+                </h:inputText>
+
+                <h:outputLabel value="Cédula " />
+                <h:inputText value="#{ beanConexion.cedula }" label="cedula">
+                    <f:validateRequired />
+                </h:inputText>
+                
+                
+                <h:outputLabel value="Correo " />
+                <h:inputText value="#{ beanConexion.correo }" label="correo">
+                    <f:validateRequired />
+                </h:inputText>
+                
+                <h:commandButton value="Guardar" actionListener="#{ beanConexion.agregarCuenta(1) }" />
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>about</from-outcome>
+            <to-view-id>/views/about.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>services</from-outcome>
+            <to-view-id>/views/services.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>contacts</from-outcome>
+            <to-view-id>/views/contacts.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/views/login.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>        
+        <from-view-id>/views/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/views/private/operations.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error</from-outcome>
+            <to-view-id>/views/login.xhtml</to-view-id>            
+        </navigation-case>        
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>personal</from-outcome>
+            <to-view-id>/views/private/personal.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>affiliation</from-outcome>
+            <to-view-id>/views/private/affiliation.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>transfers</from-outcome>
+            <to-view-id>/views/private/transfers.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>movements</from-outcome>
+            <to-view-id>/views/private/movements.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Afiliados</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href=".../css/master.css"></link>
+    </head>
+    <body>
+        <div>Afiliados</div>
+        
+        
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Tarjeta a Registrar"/>
+                <h:inputText value="#{afiliacion.tarjeta}" />
+                
+                <h:outputLabel value="Cedula del beneficiario"/>
+                <h:inputText value="#{afiliacion.cedula}" />
+                
+            </h:panelGrid>
+            
+            <h:commandButton value="Afiliar" action="#{afiliacion.ingresar()}"/>
+            
+            <h:dataTable value="#{afiliacion.mostrarData()}" var="mov" >
+                                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Nombre"/>
+                    </f:facet>
+                    <hr/>
+                    <h:outputLabel value="#{mov.nombre}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Cedula"/>
+                    </f:facet>
+                     <hr/>
+                     <h:outputLabel value="#{mov.cedula}"/>
+                </h:column>   
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Tarjeta"/>
+                    </f:facet>
+                     <hr/>
+                     <h:outputLabel value="#{mov.tarjeta}"/>
+                </h:column>  
+                
+                <h:column>
+                    <h:commandLink action="#{afiliacion.transferir()}" value="Transferir"/>
+                </h:column>
+
+            </h:dataTable>
+        </h:form>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+        <!-- StaticNavigation -->
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>about</from-outcome>
+            <to-view-id>/views/public/about.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>service</from-outcome>
+            <to-view-id>/views/public/service.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>contact</from-outcome>
+            <to-view-id>/views/public/contact.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/views/public/login.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- LoginNavigation -->
+    <navigation-rule>
+                <from-view-id>/views/public/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/views/online/dashboard.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error</from-outcome>
+            <to-view-id>/views/public/login.xhtml</to-view-id>            
+        </navigation-case>     
+    </navigation-rule>   
+    <!-- OnLineNavigation -->
+    <navigation-rule>
+        <from-view-id>/views/online/*</from-view-id>
+        <navigation-case>
+            <from-outcome>personalData</from-outcome>
+            <to-view-id>/views/online/personaldata.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>account</from-outcome>
+            <to-view-id>/views/online/account.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>transfer</from-outcome>
+            <to-view-id>/views/online/transfer.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>accountTrn</from-outcome>
+            <to-view-id>/views/online/accountTrn.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>dashboard</from-outcome>
+            <to-view-id>/views/online/dashboard.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/views/online/logout.xhtml</to-view-id>
+        </navigation-case>        
+    </navigation-rule>
+    <!-- LogoutNavigation -->
+    <navigation-rule>
+            <navigation-case>
+            <from-action>#{loginBean.logout}</from-action>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/views/public/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+</faces-config>

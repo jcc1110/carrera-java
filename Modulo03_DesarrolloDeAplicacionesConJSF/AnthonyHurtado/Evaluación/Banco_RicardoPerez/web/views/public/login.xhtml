@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../resources/templates/Master.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+
+    <ui:define name="content">
+        <article class="container">
+            <h2 class="text-center">Iniciar Sesión</h2>
+            <hr></hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h:form>
+                        <section class="form-group">
+                            <h:outputLabel for="txtUsuario" value="Usuario/Llave:" />
+                            <h:inputText id="txtUsuario" class="form-control" value="#{ loginBean.card }" label="Usuario">
+                                <f:validateLength minimum="1" maximum="5" />
+                                <f:validateRequired />
+                            </h:inputText>                
+                        </section>
+                        <section class="form-group">
+                            <h:outputLabel for="txtClave" value="Clave:" />
+                            <h:inputSecret id="txtClave" class="form-control" value="#{ loginBean.password }" label="Clave">
+                                <f:validateLength minimum="1" maximum="5" />
+                                <f:validateRequired />
+                            </h:inputSecret>                
+                        </section>    
+                        <h:commandButton class="btn btn-primary" action="#{ loginBean.login() }" value="Iniciar Sesión" />
+                    </h:form>
+                </div>
+                <div class="col-md-6"></div>
+                <img src="../../resources/images/chase.png" alt="" class="img-responsive img-circle img-thumbail" style="margin: 0 auto"> </img>
+
+            </div>
+        </article>
+    </ui:define>
+
+</ui:composition>

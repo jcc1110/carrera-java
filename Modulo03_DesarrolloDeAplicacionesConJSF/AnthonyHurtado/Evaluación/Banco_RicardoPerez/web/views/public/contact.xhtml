@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../resources/templates/Master.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <ui:define name="content">
+        <article class="container">
+            <h2 class="text-center">Contacto</h2>
+            <hr></hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.168464566007!2d-66.8323946857455!3d10.487382567331283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a5835bf2bfa87%3A0xb7e153c89f0d4c37!2sExiauto!5e0!3m2!1ses!2sve!4v1482020396468" width="100%" height="450" frameborder="0" style="border:0"></iframe>		
+                </div>
+                <br></br>
+                <br></br>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Lorem ipsum dolor sit.</h2>
+                    <p class="lead" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, incidunt ex excepturi eligendi in minus voluptatum ipsam non perspiciatis laudantium.</p>
+                    <h:form>
+                        <section class="form-group">
+                            <h:outputLabel for="Name" value="Nombre Completo" />
+                            <h:inputText id="txtname" class="form-control" label="Nombre Completo"> </h:inputText> 
+                        </section>
+                        <section class="form-group">
+                            <h:outputLabel for="email" value="Email" />
+                            <h:inputText id="txtemail" class="form-control" label="Email"> </h:inputText> 
+                        </section>
+
+                        <section class="form-group">
+                            <h:outputLabel for="message" value="Mensaje" />
+                            <h:inputText id="txtmessage" class="form-control" label="Email"> </h:inputText> 
+                        </section>
+
+                        <h:commandButton class="btn btn-primary" value="Enviar" />
+                    </h:form>
+                </div>
+                <div class="col-md-6">
+                    <img src="../../resources/images/chase.png" alt="" class="img-responsive img-circle img-thumbail" style="margin: 0 auto"> </img>
+                </div>
+            </div>
+        </article>
+
+    </ui:define>
+
+
+</ui:composition>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../resources/plantillas/principal.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">              
+    <ui:define name="title">
+        Iniciar Sesión
+    </ui:define>
+        <ui:define name="content" class="container">
+            <h:form>
+                
+                    <div class="row">
+                        <section class="col-md-6">
+                            <h4><h:outputLabel for="txtUsuario" value="Usuario:" /></h4>
+                            <h:inputText id="txtUsuario"  class="form-control" value="#{ beanConexion.usuario }" label="Usuario">
+                                <f:validateLength minimum="3" maximum="15" />
+                                <f:validateRequired />                 
+                            </h:inputText>                
+                   
+                            <h4><h:outputLabel for="txtClave" value="Clave:" /></h4>
+                            <h:inputSecret id="txtClave" class="form-control" value="#{ beanConexion.clave }" label="Clave">
+                                <f:validateLength minimum="3" maximum="15" />
+                                <f:validateRequired />
+                            </h:inputSecret>                
+                        </section>
+                        <div class="col-md-4" align="right"> <img src="logo.jpg"></img></div>
+                    </div>
+                    <br></br>
+                    <div class="row">
+                        <section class="col-md-12">
+                            <h:commandButton class="btn btn-primary" action="#{ beanConexion.validar()}" value="Iniciar Sesión" />
+                        </section>
+                    </div>          
+               
+            </h:form>
+        </ui:define>
+</ui:composition>
+

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+ <h:head>
+        <p:panel     header="Banco Central Peru" >     
+        <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                        <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />                        <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+    </p:panel>
+    </h:head>
+   
+
+    <p:growl id="msgs" autoUpdate="true" />
+
+    <h:head>
+        <p:panel header="Banco Central Peru" style="width: 1200px" />
+    </h:head>
+
+
+    <h:body>
+        <h:form>
+            <p:panel header="Movimientos Financieros" style="width: 800px">
+                <p:dataTable  id="data" value="#{MovimientoBean.Lstmovimiento}" var="persona" >
+                    <p:column headerText="Codigo">
+                        <p:outputLabel value="#{movimiento.codigo}"/>
+                    </p:column>
+
+                    <p:column headerText="Numero de Cuenta">
+                        <p:outputLabel value="#{movimiento.Nro_cuenta}"/>
+                    </p:column>      
+
+                    <p:column headerText="Monto de la Operacion">
+                        <p:outputLabel value="#{movimiento.monto}"/>
+                    </p:column>
+
+                    <p:column headerText="Cuenta Destino">
+                        <p:outputLabel value="#{movimiento.Cuenta_destino}">
+
+                        </p:outputLabel>
+                    </p:column>
+
+                    <p:column headerText="Tipo de Movimiento">
+                        <p:outputLabel value="#{movimiento.Tipo_Movimiento}"/>
+                    </p:column>
+                </p:dataTable>
+            </p:panel>
+            <p:commandButton value="Cancelar" onclick="window.history.back();"/>
+
+        </h:form>  
+
+    </h:body>
+
+</html>

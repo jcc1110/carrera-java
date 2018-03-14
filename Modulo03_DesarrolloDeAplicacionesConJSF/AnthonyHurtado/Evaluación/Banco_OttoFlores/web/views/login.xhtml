@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../resources/templates/master.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <ui:define name="title">
+        Iniciar Sesión
+    </ui:define>
+
+    <ui:define name="content">
+        <h3 class="text-info">Iniciar Sesión</h3>
+        <hr />
+        <h:form>
+            <section class="form-group">
+                <h:outputLabel for="txtUsuario" value="Usuario: " />
+                <h:inputText id="txtUsuario" class="form-control" value="#{ loginBean.username }" label="Usuario">
+                    <f:validateLength minimum="6" maximum="10" />
+                    <f:validateRequired />
+                </h:inputText>                
+            </section>
+            <h2 />
+            <section class="form-group">
+                <h:outputLabel for="txtClave" value="Clave...: " />
+                <h:inputSecret id="txtClave" class="form-control" value="#{ loginBean.password }" label="Clave">
+                    <f:validateLength minimum="6" maximum="8" />
+                    <f:validateRequired />
+                </h:inputSecret>                
+            </section>
+            <h2 />
+            <h:commandButton class="btn btn-primary" action="#{ loginBean.login }" value="Iniciar Sesión" />
+        </h:form>
+    </ui:define>
+</ui:composition>
