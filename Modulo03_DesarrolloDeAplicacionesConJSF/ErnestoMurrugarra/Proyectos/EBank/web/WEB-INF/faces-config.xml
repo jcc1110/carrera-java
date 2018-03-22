@@ -5,43 +5,10 @@
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
     <!-- Reglas de navegación -->
-    <!-- Principal -->
     <navigation-rule>
-        <from-view-id>views/principal.xhtml</from-view-id>
-        <navigation-case>
-            <from-action>views/services</from-action>
-            <to-view-id>views/services.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-action>views/contact</from-action>
-            <to-view-id>views/contact.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-action>views/authentication</from-action>
-            <to-view-id>views/authentication.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    
-    <!-- Servicios -->
-    <navigation-rule>
-        <from-view-id>views/services.xhtml</from-view-id>
-        <navigation-case>
-            <from-action>views/principal</from-action>
-            <to-view-id>views/principal.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-action>views/contact</from-action>
-            <to-view-id>views/contact.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-action>views/authentication</from-action>
-            <to-view-id>views/authentication.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    
-    <!-- Contacto -->
-    <navigation-rule>
-        <from-view-id>views/contact.xhtml</from-view-id>
+        <from-view-id>*</from-view-id>
+        
+        <!-- Vistas del landing page -->
         <navigation-case>
             <from-action>views/principal</from-action>
             <to-view-id>views/principal.xhtml</to-view-id>
@@ -51,34 +18,34 @@
             <to-view-id>views/services.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
+            <from-action>views/contact</from-action>
+            <to-view-id>views/contact.xhtml</to-view-id>
+        </navigation-case>
+        
+        <!-- Vistas de la app -->
+        <navigation-case>
             <from-action>views/authentication</from-action>
             <to-view-id>views/authentication.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    
-    <!-- Autenticación -->
-    <navigation-rule>
-        <from-view-id>views/authentication.xhtml</from-view-id>
-        <navigation-case>
-            <from-action>index</from-action>
-            <to-view-id>views/principal.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-action>dashboard</from-action>
             <to-view-id>views/dashboard.xhtml</to-view-id>
         </navigation-case>
-    </navigation-rule>
-    
-    <!-- Autenticación -->
-    <navigation-rule>
-        <from-view-id>views/dashboard.xhtml</from-view-id>
         <navigation-case>
             <from-action>views/person_data</from-action>
             <to-view-id>views/person_data.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-action>dashboard</from-action>
-            <to-view-id>views/dashboard.xhtml</to-view-id>
+            <from-action>views/transfers</from-action>
+            <to-view-id>views/transfers.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>views/operations</from-action>
+            <to-view-id>views/operations.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>views/movements</from-action>
+            <to-view-id>views/movements.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

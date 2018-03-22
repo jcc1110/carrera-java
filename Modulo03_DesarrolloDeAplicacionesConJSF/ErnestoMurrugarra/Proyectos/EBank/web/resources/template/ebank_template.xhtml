@@ -15,13 +15,14 @@
 
         <div id="left" style="float: left;">
             Hola <ui:insert name="user"></ui:insert> !<br/>
-            <h:form><h:commandButton value="Cerrar sesión" action="index" /></h:form>
+            <h:form><h:commandButton value="Cerrar sesión" action="views/principal" /></h:form>
             <h5>Opciones:</h5>
             <ol>
                 <h:form>
                     <li><h:commandButton value="Datos Personales" action="views/person_data" /></li>
-                    <li><h:commandButton value="Transferencias" action="views/services" /></li>
-                    <li><h:commandButton value="Movimientos" action="views/contact"/></li>
+                    <li><h:commandButton value="Transferencias" action="views/transfers" /></li>
+                    <li><h:commandButton value="Operaciones" action="views/operations"/></li>
+                    <li><h:commandButton value="Consulta de movimientos" action="views/movements"/></li>
                 </h:form>
             </ol>
         </div>

@@ -2,36 +2,42 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <!-- <h:outputStylesheet name="./css/default.css"/> -->
         <!-- <h:outputStylesheet name="./css/cssLayout.css"/> -->
         <title>E-Bank</title>
+        <h:outputStylesheet name="css/w3.css"/>
     </h:head>
 
     <h:body>
         <!-- Header de app -->
         <div class="top">
-            <ui:insert name="title">
+            <!-- <ui:insert name="title">
                 <h1>Bienvenido a E-Bank</h1>
             </ui:insert>
-            <h:form><h:commandLink value="Iniciar sesión" action="views/authentication" /></h:form>
-            <ul>
-                <h:form>
-                    <li><h:commandButton value="Principal" action="views/principal" /></li>
-                    <li><h:commandButton value="Servicios" action="views/services" /></li>
-                    <li><h:commandButton value="Contacto" action="views/contact"/></li>
-                </h:form>
-            </ul>
-            <hr />
+            <h:form><h:commandLink value="Iniciar sesión" action="views/authentication" /></h:form> -->
+            <h:form>
+                <div class="w3-bar w3-black">
+                    <a href="#" class="w3-bar-item w3-button">E-Bank</a>
+                    <a href="#" class="w3-bar-item w3-button" jsf:action="views/principal">Principal</a>
+                    <a href="#" class="w3-bar-item w3-button" jsf:action="views/services">Servicios</a>
+                    <a href="#" class="w3-bar-item w3-button" jsf:action="views/contact">Contacto</a>
+                    <a href="#" class="w3-bar-item w3-button w3-right" jsf:action="views/authentication">Iniciar Sesión</a>
+                </div>
+            </h:form>
         </div>
         <!-- Header de app -->
         
         <div>
             <div id="content" class="left_content">
-                <ui:insert name="content">Donde tus transacciones se realizan de manera segura...!</ui:insert>
+                <ui:insert name="content">
+                    <h1>Bienvenido a E-Bank</h1>
+                    Donde tus transacciones se realizan de manera segura...!
+                </ui:insert>
             </div>
         </div>
     </h:body>
