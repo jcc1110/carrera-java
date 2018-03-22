@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="/css/default.css"/>
+        <h:outputStylesheet name="/css/cssLayout.css"/>
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top">
+            <ui:insert name="top"></ui:insert>
+
+            <div id="menubar">
+
+                <h:form>  
+                    <p:growl id="messages"/>
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />  
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                     <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:menubar>
+                        <p:submenu label="Cliente" icon="/Users/john/Downloads/smile-smile-icono-8303-48.png">
+                            <p:submenu label="Datos Personales" icon="ui-icon-contact">
+                                <p:menuitem value="Consultar" url="Consultar_Clientes.xhtml" />
+                                <p:menuitem value="Ingresar" url="Vista_Ingresar_Cliente.xhtml" />
+                            </p:submenu>
+                            <p:separator />
+                            <p:menuitem value="Salir" url="index.xhtml" />
+                        </p:submenu>
+
+                        <p:submenu label="Afiliacion de Cuenta" icon="ui-icon-pencil">
+                            <p:menuitem value="Afiliar" url="Afiliar_cuenta_cliente.xhtml" />
+                            <p:separator />
+                            <p:menuitem value="Eliminar" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+                        </p:submenu>
+
+                        <p:submenu label="Operaciones" icon="ui-icon-gear">
+                                <p:menuitem value="Consulta" url="Consultar_movimiento.xhtml" />
+                                <p:separator />
+                                <p:menuitem value="Transferencia" actionListener="#{menuView.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>
+                         </p:submenu>
+
+                        <p:menuitem value="Salir" url="index.xhtml" />
+                        
+
+                    </p:menubar>
+                </h:form>
+
+            </div>
+
+        </div>
+        
+       
+
+
+    </h:body>
+
+
+</html>

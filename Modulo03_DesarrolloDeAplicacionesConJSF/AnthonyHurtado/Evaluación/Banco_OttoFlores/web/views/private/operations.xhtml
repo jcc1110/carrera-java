@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <body>
+        <ui:composition template="./../../resources/templates/master.xhtml">
+            <ui:define name="title">
+                Operaciones
+            </ui:define>
+    
+            <ui:define name="top">
+                <h2>
+                    <img class="logo" src="resources/images/logo.png"/>
+                    <a>Banco Rupto - Donde su dinero se pierde...</a>
+                </h2>
+                <h2 />
+                <h:form class="menu">
+                    <a><h:commandLink value="Inicio" action="home" /></a>
+                    <a><h:commandLink value="Datos Personales" action="personal" /></a>
+                    <a><h:commandLink value="Afiliación de Cuentas" action="affiliation" /></a>
+                    <a><h:commandLink value="Transferencias" action="transfers" /></a>
+                    <a><h:commandLink value="Movimientos Bancarios" action="movements" /></a>
+                </h:form>                
+            </ui:define>
+            <ui:define name="content"> 
+                <h2>Elija una opción</h2>               
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

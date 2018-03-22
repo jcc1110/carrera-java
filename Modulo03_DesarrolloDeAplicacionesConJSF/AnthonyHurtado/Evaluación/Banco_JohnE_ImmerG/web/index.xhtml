@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Inicio</title>
+    </h:head>
+    <h:body>  
+        <p:growl id="msj" autoUpdate="true" />
+    </h:body>
+
+    <h:head>
+        <p:panel header="                 Banco Central Peru            " style="width: 1200px">
+        </p:panel>
+    </h:head>
+    <h:body>
+
+        <p:layout style="min-width:300px;min-height:50px;color:blue">
+
+
+            <p:layoutUnit position="center" >
+                <h:form>
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />  
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />               
+                    Por favor pulse el Botón de Banca en línea para Ingresar al Sistema
+
+                    <h:commandButton value="Banca en linea" action="/Vistas/Vista_Banco_Operaciones" style="color:blue"/>
+                    <h:commandButton value="Contactenos" action="/Vistas/Vista_Contactenos" style="color:blue"/>
+                </h:form>
+
+                <p:graphicImage  value="resources/Imagenes/bcp.png" width="90" height="50" />
+            </p:layoutUnit>
+        </p:layout>
+
+
+        <h:form>
+            <p:growl id="msgs" showDetail="true" />
+            <p:graphicImage  value="resources/Imagenes/peru.png" width="50" height="50" />
+
+            <h3 style="margin-bottom:30px;color:red;tab-size:10">Lista de Agencias</h3>
+            <p:scrollPanel style="width:350px;height:100px;color:grey">
+
+                <p>
+                    Agencia Lima. Telf.:0212-2554433
+                </p>
+                <p>
+                    Agencia Cusco. Telf.:0212-287654
+                </p>
+                <p>
+                    Agencia Torre Silencio. Telf.:0212-243245
+                </p>
+                <p>
+                    Agencia Plaza Venezuela. Telf.:0212-776655
+                </p>
+                <p>
+                    Agencia Chacaito. Telf.:0212-9876543
+                </p>
+                <p>
+                    Agencia Chacao. Telf.:0212-7321234
+                </p>
+
+            </p:scrollPanel>
+
+
+
+            <p:panel header="Banco Central Peru" style="width: 1200px">
+
+                <h:panelGrid columns="50" cellpadding="10">
+                    <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
+                    <h:outputText value="
+                                  El Banco Central de Peru (BCP) opera en el Perú desde 1889  como Banco Italiano y a partir de 1941 como Banco de Crédito del Perú. El BCP es una institución sólida cuya vocación y principios la han hecho líder indiscutible del mercado peruano a lo largo de sus más de 
+                                  115 años de impecable trayectoria.
+                                  Desde 1995 forma parte del grupo Credicorp, uno de los conglomerados financieros más importantes de Latinoamérica, que combina los negocios bancarios del BCP y del Atlantic Security Bank con los negocios de seguros de Pacífico Peruano Suiza, la empresa más grande del 
+                                  Perú en su rubro. Las acciones de Credicorp están inscritas en la Bolsa de Valores de Nueva York, lo que le permite acceder con facilidad a los mercados de capitales internacionales.
+                                  El Banco de Crédito de Bolivia S.A. es una empresa 100% subsidiaria del Banco de Crédito BCP. Iniciamos nuestras operaciones en el mercado boliviano en 1994 después de que adquirimos el Banco Popular, institución que se ubicaba en el puesto número trece del sistema 
+                                  financiero nacional."/>                  
+                </h:panelGrid>
+
+            </p:panel>
+
+
+        </h:form>
+
+
+    </h:body>
+
+
+</html>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../resources/plantillas/bienvenida.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <h:form>
+            <h:dataTable 
+                value="#{ beanConexion.Movimientos(1) }"
+                        var="mov" 
+                        styleClass="employeeTable"
+                        headerClass="employeeTableHeader"
+                        rowClasses="employeeTableOddRow, employeeTableEvenRow">                
+                <h:column>
+                    <f:facet name="header">Tipo</f:facet>
+                    #{ mov.tipo }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Monto</f:facet>
+                    #{ mov.monto }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Cliente</f:facet>
+                    #{ mov.cliente }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Concepto</f:facet>
+                    #{ mov.concepto }
+                </h:column>
+            </h:dataTable> 
+        </h:form>
+    </ui:define>
+
+</ui:composition>

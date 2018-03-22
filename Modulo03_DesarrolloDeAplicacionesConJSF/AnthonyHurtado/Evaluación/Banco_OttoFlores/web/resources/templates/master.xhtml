@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="css/default.css"/>
+        <h:outputStylesheet name="css/cssLayout.css"/>
+        <link rel="shortcut icon" href="resources/images/HomeBankingIco.png" type="image/png" />
+        <title>
+            <ui:insert name="title">
+                Banco Rupto - Home Banking
+            </ui:insert>
+        </title>
+        <style type="text/css">
+            body {background:url("resources/images/fondo.jpg") repeat-x left top;}
+        </style>
+    </h:head>
+
+    <h:body>
+        <div id="top">
+            <ui:insert name="top">
+                <h2>
+                    <img class="logo" src="resources/images/logo.png"/>
+                    <a>Banco Rupto - Donde su dinero se pierde...</a>
+                </h2>
+                <h2></h2>
+                <h:form class="menu">
+                    <a><h:commandLink value="Inicio" action="home" /></a>
+                    <a><h:commandLink value="Quienes Somos" action="about" /></a>
+                    <a><h:commandLink value="Servicios" action="services" /></a>
+                    <a><h:commandLink value="Contactos" action="contacts" /></a>
+                    <a><h:commandLink value="Iniciar Sesión" action="login" /></a>
+                </h:form>                
+            </ui:insert>
+        </div>
+        
+        <div id="content" class="right_content">
+            <ui:insert name="content">
+                        
+            </ui:insert>
+        </div>
+        
+        <div id="bottom">
+            <ui:insert name="bottom">Importante: Recuerde que esta Entidad no envía correos electrónicos (e-mail), ni realiza llamados telefónicos para solicitar cambio o confirmación de datos personales (números de cuenta, nombre del usuario, claves de accesos) Banco Rupto en ningún caso se comunicara con Ud. requiriéndole este tipo de información.</ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

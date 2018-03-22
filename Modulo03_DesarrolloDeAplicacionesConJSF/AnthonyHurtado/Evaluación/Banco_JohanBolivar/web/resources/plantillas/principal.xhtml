@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+         <h:outputStylesheet name="css/bootstrap.min.css"/>
+        <h:outputStylesheet name="css/default.css"/>
+        <h:outputStylesheet name="css/cssLayout.css"/>
+        <title>Mi Banco</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top" class="navbar navbar-expand-lg">
+            <div class="collapse navbar-collapse">
+                <h:form>
+                        <nav class="navbar">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                  </button>                                  
+                                </div>
+
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                  <ul class="nav navbar-nav">
+                                    <li><h:commandLink value="Acerca" action="acerca" /></li>
+                                    <li><h:commandLink value="Servicios" action="servicios" /></li>
+                                    <li><h:commandLink value="Contacto" action="contacto" /></li>
+                                    <li><h:commandLink value="Iniciar Sesión" action="login" /></li>
+                                  </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </h:form>
+            </div>
+              
+        </div>
+
+        <div id="content" class="center_content container">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+        <div id="bottom">
+            <ui:insert name="bottom">Mi Banco se reserva todos los rerechos de autor</ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

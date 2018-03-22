@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../resources/templates/master.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="title">
+        Transferencias
+    </ui:define>
+
+    <ui:define name="top">
+                <h2>
+                    <img class="logo" src="resources/images/logo.png"/>
+                    <a>Banco Rupto - Donde su dinero se pierde...</a>
+                </h2>
+                <h2 />
+                <h:form class="menu">
+                    <a><h:commandLink value="Inicio" action="home" /></a>
+                    <a><h:commandLink value="Datos Personales" action="personal" /></a>
+                    <a><h:commandLink value="Afiliación de Cuentas" action="affiliation" /></a>
+                    <a><h:commandLink value="Transferencias" action="transfers" /></a>
+                    <a><h:commandLink value="Movimientos Bancarios" action="movements" /></a>
+                </h:form>  
+    </ui:define>
+
+    <ui:define name="content">
+        <h3 class="text-info">Transferencia de Fondos</h3>
+        <hr />
+        <h:form>
+            <section class="form-group">
+                <h:outputLabel for="txtAccounto" value="Cuenta Origen: " />
+                <h:inputText id="txtAccounto" class="form-control" value="#{ account.accounto }" label="Accounto">
+                    <f:validateLength minimum="1" maximum="10" />
+                    <f:validateRequired />
+                </h:inputText>                
+            </section>
+            <h2 />
+            <section class="form-group">
+                <h:outputLabel for="txtAccountd" value="Cuenta Destino: " />
+                <h:inputText id="txtAccountd" class="form-control" value="#{ account.accountd }" label="Accountd">
+                    <f:validateLength minimum="1" maximum="10" />
+                    <f:validateRequired />
+                </h:inputText>                
+            </section>
+            <h2 />
+            <section class="form-group">
+                <h:outputLabel for="txtAmount" value="Monto a Transferir: " />
+                <h:inputText id="txtAmount" class="form-control" value="#{ account.amount }" label="Amount">
+                    <f:validateLength minimum="1" maximum="10" />
+                    <f:validateRequired />
+                </h:inputText> 
+                
+            </section>            
+            <h2 />
+            <h:commandButton class="btn btn-primary" action="#{ account.transferir }" value="Transferir" />
+        </h:form>
+    </ui:define>
+
+</ui:composition>

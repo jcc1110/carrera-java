@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../resources/templates/DashboardMaster.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <article class="container">
+            <h1>Afiliar Cuenta</h1>
+            <hr></hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h:form>
+                        <section class="form-group">
+                            <h:outputLabel for="txtaccount" value="Numero de Cuenta" />
+                            <h:inputText id="txtaccount" class="form-control" value="#{ loginBean.newAccountNumber }" label="Account">
+                            </h:inputText>                
+                        </section>
+                        <section class="form-group">
+                            <h:outputLabel for="txtownername" value="Nombre Titular" />
+                            <h:inputText id="txtownername" class="form-control" value="#{ loginBean.newowner }" label="Name">
+                            </h:inputText>                
+                        </section>  
+                        <section class="form-group">
+                            <h:outputLabel for="txtidowner" value="Identificación Titular" />
+                            <h:inputText id="txtidowner" class="form-control" value="#{ loginBean.newid }" label="IDxs">
+                            </h:inputText>                
+                        </section>
+                        <h:commandButton class="btn btn-primary" action="#{ loginBean.addAccount() }" value="Afiliar" />
+                    </h:form>
+                </div>
+                <div class="col-md-6">
+
+                    <h:dataTable style="width: 100%"
+                                 value="#{ loginBean.listaccountsadd }"
+                                 rendered="#{ not empty loginBean.listaccountsadd }"
+                                 var="account" 
+                                 styleClass="employeeTable"
+                                 headerClass="employeeTableHeader"
+                                 rowClasses="employeeTableOddRow, employeeTableEvenRow">                
+                        <h:column class="col-md-4">
+                            <f:facet name="header">Número de cuenta </f:facet>
+                    #{ account.accountnumber }
+                        </h:column>                
+                        <h:column class="col-md-4">
+                            <f:facet name="header">Nombre</f:facet>
+                    #{ account.accountowner }
+                        </h:column>                
+                        <h:column class="col-md-4">
+                            <f:facet name="header">Cédula</f:facet>
+                    #{ account.owneridnumber }
+                        </h:column>                   
+                    </h:dataTable>            
+                </div>
+
+            </div>
+        </article>
+    </ui:define>
+
+
+</ui:composition>

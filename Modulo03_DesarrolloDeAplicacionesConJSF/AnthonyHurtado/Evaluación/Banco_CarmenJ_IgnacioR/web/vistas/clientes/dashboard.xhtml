@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../resources/templates/maestro.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="title">
+        Dashboard
+    </ui:define>
+
+    <ui:define name="content">
+        <hr />      
+        <h3 class="text-info">Clientes</h3>
+        <hr />                
+        <h4>Afiliación</h4>               
+        <h:form>
+            <section class="form-group">
+                <h:outputLabel for="txtCuenta" value="Cuenta:" />
+                <h:inputText id="txtCuenta" class="form-control" value="#{ usuario.cuenta }" label="Cuenta">
+                    <f:validateLength minimum="4" maximum="20" />
+                    <f:validateRequired />
+                </h:inputText>                
+            </section>
+            <section class="form-group">
+                <h:outputLabel for="txtClave" value="Clave:" />
+                <h:inputText id="txtClave" class="form-control" value="#{ usuario.clave }" label="Nombre">
+                    <f:validateLength minimum="3" maximum="10" />
+                    <f:validateRequired />
+                </h:inputText>                
+            </section>   
+            <h:commandButton class="btn btn-primary" action="#{ usuario.afiliar }" value="Afiliar" />
+        </h:form>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../resources/templates/DashboardMaster.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+
+
+    <ui:define name="content">
+        <article class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Bienvenido: #{loginBean.userConnected.name} #{loginBean.userConnected.lastname}</h1>
+                    <hr></hr>
+                </div>   
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Resumen de cuenta</h3>
+                    <hr></hr>
+                </div>   
+            </div>
+
+            <div class="datagrid">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cuenta</th>
+                            <th>Titular</th>
+                            <th>Saldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#{loginBean.userConnected.card}</td>
+                            <td>#{loginBean.userConnected.lastname}, #{loginBean.userConnected.name}</td>
+                            <td>#{loginBean.userConnected.balance}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </article>
+        <br></br>
+        <br></br>
+        
+         <h:form>
+             <h:commandButton class="btn btn-primary center-block" action="#{ loginBean.logout() }" value="LogOut" />
+         </h:form>
+        <br></br>
+    </ui:define>
+
+
+</ui:composition>

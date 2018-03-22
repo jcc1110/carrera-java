@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <p:panel     header="Banco Central Peru" >     
+        <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                        <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />                        <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+                    <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="90" height="50" />
+    </p:panel>
+    </h:head>
+      
+        <p:growl id="msgs" autoUpdate="true" />
+
+    
+    <h:body>
+        <h:form>
+            <p:panel header="Consultar Datos Personales" style="width: 800px">
+                <p:graphicImage  value="resources/Imagenes/bcp.jpg" width="50" height="50" />
+                <p:dataTable  id="data" value="#{personaBean.lstPersona}" var="persona" >
+                    <p:column headerText="Codigo">
+                        <p:outputLabel value="#{persona.codigo}"/>
+                    </p:column>
+
+                    <p:column headerText="Nombres">
+                        <p:outputLabel value="#{persona.nombres}"/>
+                    </p:column>      
+
+                    <p:column headerText="Apellidos">
+                        <p:outputLabel value="#{persona.apellidos}"/>
+                    </p:column>
+
+                    <p:column headerText="Sexo">
+                        <p:outputLabel value="#{persona.sexo}">
+
+                        </p:outputLabel>
+                    </p:column>
+
+                    <p:column headerText="Fecha de Nacimiento">
+                        <p:outputLabel value="#{persona.fecha_nacimiento}"/>
+                    </p:column>
+
+                    <p:column headerText="Clave">
+                        <p:outputLabel value="#{persona.clave}"/>
+                    </p:column>
+                    
+                    <p:column headerText="Modificar">
+                        <p:commandLink value="Modificar" actionListener="#{personaBean.leerID(persona)}"/>
+                    </p:column>                    
+                </p:dataTable>
+            </p:panel>
+           <p:commandButton value="Cancelar" onclick="window.history.back();"/>
+        </h:form>  
+
+     
+        
+        
+</h:body>
+
+</html>

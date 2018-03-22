@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="css/bootstrap.min.css"/>
+        <title>
+            <ui:insert name="title">
+                Bienvenido/a al Banco de Venezuela
+            </ui:insert>
+        </title>
+    </h:head>
+    <h:body>
+        <article class="container">
+            <section id="top">
+                <ui:insert name="top">
+                    <h:form>
+                        <nav class="navbar navbar-inverse">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                  </button>
+                                  <h:commandLink class="navbar-brand" value="Banco de Venezuela" action="home" />
+                                </div>
+
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                  <ul class="nav navbar-nav">
+                                    <li><h:commandLink value="Acerca" action="about" /></li>
+                                    <li><h:commandLink value="Servicios" action="services" /></li>
+                                    <li><h:commandLink value="Contacto" action="contacts" /></li>
+                                    <li><h:commandLink value="Iniciar Sesión" action="login" /></li>
+                                  </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </h:form>
+                </ui:insert>
+            </section>
+
+            <section id="content" class="center_content">
+                <ui:insert name="content">
+                    Contenido
+                </ui:insert>
+            </section>
+
+            <section id="bottom">
+                <ui:insert name="bottom">
+                    <p class="text-center text-muted">
+                        Todos los derechos reservados. Janett/Henry
+                    </p>
+                </ui:insert>
+            </section>
+        </article>
+    </h:body>
+</html>

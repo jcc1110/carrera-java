@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+        
+    <!-- Público -->
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>acerca</from-outcome>
+            <to-view-id>/vistas/publicas/acerca.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>servicios</from-outcome>
+            <to-view-id>/vistas/publicas/servicios.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>contacto</from-outcome>
+            <to-view-id>/vistas/publicas/contacto.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/vistas/publicas/login.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- Login -->
+    <navigation-rule>        
+        <from-view-id>/vistas/publicas/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>true</from-outcome>
+            <to-view-id>/vistas/privadas/bienvenida.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>false</from-outcome>
+            <to-view-id>/vistas/publicas/login.xhtml</to-view-id>            
+        </navigation-case>        
+    </navigation-rule>
+    <!-- Binvenida -->
+    
+    <navigation-rule>        
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>movimientos</from-outcome>
+            <to-view-id>/vistas/privadas/Movimientos.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>transferencias</from-outcome>
+            <to-view-id>/vistas/privadas/Transferencias.xhtml</to-view-id>            
+        </navigation-case>  
+        <navigation-case>
+            <from-outcome>cuentas</from-outcome>
+            <to-view-id>/vistas/privadas/RegistroCuenta.xhtml</to-view-id>            
+        </navigation-case>        
+    </navigation-rule>
+    <!-- cuentas-->
+    <navigation-rule>        
+        <from-view-id>RegistroCuenta</from-view-id>
+        <navigation-case>
+            <from-outcome>true</from-outcome>
+            <to-view-id>/vistas/privadas/Transferencias.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>false</from-outcome>
+            <to-view-id>/vistas/privadas/RegistroCuenta.xhtml</to-view-id>            
+        </navigation-case>        
+    </navigation-rule>
+</faces-config>

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>about</from-outcome>
+            <to-view-id>/views/public/about.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>service</from-outcome>
+            <to-view-id>/views/public/service.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>contact</from-outcome>
+            <to-view-id>/views/public/contact.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/views/public/login.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- LoginNavigation -->
+    <navigation-rule>        
+        <from-view-id>/views/public/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/views/online/dashboard.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error</from-outcome>
+            <to-view-id>/views/public/login.xhtml</to-view-id>            
+        </navigation-case>        
+    </navigation-rule>
+    
+    <!-- DashboardNavigation -->
+
+    <navigation-rule>
+        <from-view-id>/views/online/*</from-view-id>
+        <navigation-case>
+            <from-outcome>transfers</from-outcome>
+            <to-view-id>/views/online/transfers.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>add_account</from-outcome>
+            <to-view-id>/views/online/add_accounts.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>account_movements</from-outcome>
+            <to-view-id>/views/online/account_movement.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>personal_information</from-outcome>
+            <to-view-id>/views/online/personal_information.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>dashboard_home</from-outcome>
+            <to-view-id>/views/online/dashboard.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+</faces-config>
