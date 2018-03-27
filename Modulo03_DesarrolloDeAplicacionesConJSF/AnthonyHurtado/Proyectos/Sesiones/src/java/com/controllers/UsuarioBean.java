@@ -39,7 +39,7 @@ public class UsuarioBean implements Serializable {
             session.setAttribute("rol", "Administrador");
         } else {
             resultado = "error";
-            FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_WARN, "Usuario o contraseña incorrectos", "");
+            FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario o contraseña incorrectos", "");
             FacesContext.getCurrentInstance().addMessage(null, fm);            
         }
         

@@ -16,11 +16,16 @@ public class AutorizacionFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         try {
-            HttpServletRequest reqt = (HttpServletRequest) request;
-            HttpServletResponse resp = (HttpServletResponse) response;
-            HttpSession ses = reqt.getSession(false);
+            // Consulta HTTP
+            HttpServletRequest reqt = (HttpServletRequest) request;            
+            // Respuesta HTTP
+            HttpServletResponse resp = (HttpServletResponse) response;            
+            // Sesión actual
+            HttpSession ses = reqt.getSession(false);            
+            // Ruta solicitada
             String reqURI = reqt.getRequestURI();
             
+            // Validación de datos 
             if (reqURI.indexOf("/index.xhtml") >= 0 || (ses != null && ses.getAttribute("usuario") != null) || reqURI.indexOf("/public/") >= 0 || reqURI.contains("javax.faces.resource")) {
                 chain.doFilter(request, response);
             } else {
