@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:jsf="http://xmlns.jcp.org/jsf">
+         
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <!--  <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/> -->
+      <h:outputStylesheet name="css/w3.css"/> 
+      <h:outputScript library="js" name="123.js" target="body"/>  
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <title>E-Bank</title>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil"></link>
+ <link href="https://fonts.googleapis.com/css?family=Crimson+Text:700i|Roboto:300i" rel="stylesheet"></link>
+                <style>
+
+
+.w3-myfont {
+   
+    font-family: 'Roboto', cursive, sans-serif;
+}
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+</style>
+    </h:head>
+
+    <h:body>
+
+<!-- Header de app-->
+        <div  class="top">
+
+                <h:form>
+                        <div class="w3-bar w3-border w3-card-4 w3-blue">
+                         <a href="#" class="w3-bar-item w3-button w3-allerta" jsf:action="index">E-Bank</a>
+                         <a href="#" class="w3-bar-item w3-button w3-allerta" jsf:action="views/Principal">Principal</a>
+                         <a href="#" class="w3-bar-item w3-button w3-allerta" jsf:action="views/Services">Servicios</a>
+                         <a href="#" class="w3-bar-item w3-button w3-allerta" jsf:action="views/Contact">Contacto</a>
+                         <a href="#" class="w3-bar-item w3-button w3-right w3-allerta" jsf:action="views/authentication">Iniciar sesión</a>
+                       </div> 
+                </h:form>
+            
+        </div>
+        <div>
+          
+            <div id="content" class="left_content">
+                <ui:insert name="content">
+                 <div class="w3-container w3-allerta ">
+                    <h1 class="w3-xlarge w3-allerta">Bienvenido a E-Bank</h1>
+                  </div> 
+    
+                    
+                <!-- Slider -->
+  <div class="mySlides w3-display-container w3-center">
+      <h:graphicImage library="images" name="1candado.jpg" alt="candado" style="width:70%" class="w3-round-xxlarge">
+    <div class="w3-display-bottommiddle w3-container w3-text-black w3-padding-32 w3-hide-small">
+      <h3>E-Bank</h3>
+      <p><b>Tu banca Segura</b></p>   
+    </div>
+      </h:graphicImage>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <h:graphicImage library="images" name="1confianza.jpg" style="width:70%" class="w3-round-xxlarge">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>E-Bank</h3>
+      <p><b>Un Banco familiar</b></p> 
+    </div>
+    </h:graphicImage>   
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <h:graphicImage library="images" name="1rapidez.jpg"  style="width:70%" class="w3-round-xxlarge">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>E-Bank</h3>
+      <p><b>La Banca más rápida del mercado</b></p>    
+    </div>
+    </h:graphicImage>
+  </div>              
+                                 
+       
+                    </ui:insert>
+                
+            </div>
+        </div>
+    </h:body>
+
+</html>

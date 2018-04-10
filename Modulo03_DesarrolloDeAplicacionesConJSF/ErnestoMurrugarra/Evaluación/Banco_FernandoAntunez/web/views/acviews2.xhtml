@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Uso de DataTable</title>
+        <h:outputStylesheet library="css" name="styles.css" />
+    </h:head>       
+    <h:body>
+         <h:form>
+            <!-- Atributos necesarios para que el dataTable funcione (en este ejemplo) -->
+            <h:dataTable 
+                        value="#{ af.afmodelLst }"
+                        rendered="#{ not empty af.afmodelLst }"
+                        var="afi"                        
+                        styleClass="employeeTable"
+                        headerClass="employeeTableHeader"
+                        rowClasses="employeeTableOddRow, employeeTableEvenRow">                
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    #{ afi.name }
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Apellido</f:facet>
+                    #{ afi.lastname }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Tipo C.I</f:facet>
+                    #{ afi.id_type }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Cedula</f:facet>
+                    #{ afi.id }
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Banco</f:facet>
+                    #{ afi.bank }
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Tipo de Cuenta</f:facet>
+                    #{ afi.account_type }
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Numero de Cuenta</f:facet>
+                    #{ afi.account_number }
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Acciones</f:facet>
+                    <h:commandLink value="Eliminar" actionListener="#{ af.deleteEmployee(afi) }" />                  
+                </h:column>                
+            </h:dataTable>
+            <br/>
+            <h:commandButton value="Volver"  action="accountaffiliation" />
+            <h:commandButton value="Salir"  action="authentication" />
+            </h:form>
+    </h:body>
+</html>
+

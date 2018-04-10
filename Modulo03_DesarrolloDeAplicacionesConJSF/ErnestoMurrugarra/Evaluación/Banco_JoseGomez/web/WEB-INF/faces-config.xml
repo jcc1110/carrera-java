@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <!-- Reglas de navegación -->
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        
+        <!-- Vistas del landing page -->
+        <navigation-case>
+            <from-action>views/principal</from-action>
+            <to-view-id>views/principal.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>views/services</from-action>
+            <to-view-id>views/services.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>views/contact</from-action>
+            <to-view-id>views/contact.xhtml</to-view-id>
+        </navigation-case>
+        
+        <!-- Vistas de la app -->
+        <navigation-case>
+            <from-action>views/authentication</from-action>
+            <to-view-id>views/authentication.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>dashboard</from-action>
+            <to-view-id>views/dashboard.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>views/person_data</from-action>
+            <to-view-id>views/person_data.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>views/transfers</from-action>
+            <to-view-id>views/transfers.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>views/operations</from-action>
+            <to-view-id>views/operations.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>views/movements</from-action>
+            <to-view-id>views/movements.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

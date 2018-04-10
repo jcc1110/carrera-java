@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../resources/template/ebank_template.xhtml">
+
+            <ui:define name="user">
+                user
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form>
+                   <h3>Movimientos bancarios</h3>
+                <!-- MOSTRAR CONTACTOS PARA TRANSFERIR -->
+ <h:dataTable 
+     value="#{ tb.transLst }"
+     rendered="#{ not empty tb.transLst}"
+                        var="move" 
+                        styleClass="PersonTable"
+                        headerClass="PersonTableHeader"
+                        rowClasses="PersonTableOddRow, PersonTableEvenRow">                
+                <h:column>
+                    <f:facet name="header">Monto</f:facet>
+                    #{move.monto}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Descripcion</f:facet>
+                    #{ move.descripcion }
+                </h:column> 
+     
+                     <h:column>
+                    <f:facet name="header">Saldo en Linea</f:facet>
+                    #{move.saldo }
+                </h:column> 
+                </h:dataTable><br/><br/>
+                    
+                    
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

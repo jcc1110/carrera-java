@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <body>
+        <ui:composition template="./../resources/template/ebank_template.xhtml">
+            <ui:define name="user">
+                
+            </ui:define>
+            <ui:define name="content">                
+                <h:form>            
+                <h2>Consulta de Movimientos</h2>
+                <h:panelGrid columns="2">
+                    Seleccionar:
+                    <h:selectOneMenu 
+                                    value="#{ mb.selectedAccount }" 
+                                    onchange="submit()" 
+                                    valueChangeListener="#{ mb.accountChange }">
+                        <f:selectItems value="#{ mb.account }" />
+                    </h:selectOneMenu>
+                    Sueldo en Bsf:
+                    <h:outputText value="#{ mb.salary }"/>
+                </h:panelGrid>
+                </h:form> 
+                <h:dataTable 
+                                value=""
+                                rendered="#{mb.t}"
+                                var="">                
+                    <h:column>
+                        <f:facet name="header">Fecha</f:facet>
+                        19/03/2018<br/>
+                        20/02/2018<br/>
+                        21/03/2018<br/>
+                        22/02/2018<br/>
+                        23/03/2018
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Operación</f:facet>
+                        Depósito<br/>
+                        Transferencia<br/>
+                        Depósito<br/>
+                        Transferencia<br/>
+                        Depósito
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Monto</f:facet>
+                        +67.500,00.<br/>
+                        -67.000,00.<br/>
+                        +67.500,00.<br/>
+                        -67.000,00.<br/>
+                        +756,00.
+                    </h:column>
+                </h:dataTable><br/><br/>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

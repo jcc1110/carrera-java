@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <!--  <h:outputStylesheet name="./../css/default.css"/>
+        <h:outputStylesheet name="./../css/cssLayout.css"/> -->
+      <h:outputStylesheet library = "css" name = "styles.css"  />
+       
+      <h:outputStylesheet name="css/w3.css"/> 
+     
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+      <style>    
+.vertical-menu {
+    width: 220px;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #0080FF;
+    color: white;
+}
+</style>
+      <style>
+body { 
+     background-image:url("#{resource['images:cp.jpg']}"); 
+  
+}
+</style>
+
+      
+        <title>Bank Template</title>
+        
+    </h:head>
+
+    <h:body>
+
+
+        
+        <div id="left" style="float:left" >
+            
+            
+               
+                <ol>
+                <h:form>
+                    <div class="vertical-menu">
+                        <a href="#" class="active">Opciones</a>
+                        <a href="#" class="w3-button" jsf:action="views/person_data">Datos personales</a> 
+                         <a href="#" class="w3-button" jsf:action="views/Transfers">Transferencias</a> 
+                          <a href="#" class="w3-button" jsf:action="views/Operation">Afiliación de Cuentas</a> 
+                           <a href="#" class="w3-button" jsf:action="views/Movements">Consulta de Movimientos</a> 
+                           <a href="#" class="w3-button w3-red" jsf:action="/index">Cerrar Sesión</a> 
+
+                    </div>
+                   
+                </h:form>    
+                    
+                </ol>
+                
+        </div>
+        <div id="content" class="center_content" style="float:left">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

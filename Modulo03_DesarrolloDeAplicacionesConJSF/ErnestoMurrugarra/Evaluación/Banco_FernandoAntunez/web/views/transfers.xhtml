@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../resources/template/ebank_template.xhtml">
+
+            <ui:define name="user"> </ui:define>
+
+            <ui:define name="content">
+                <h:form>
+                    <!-- ESCOGER CUENTA A DEBTAR -->
+                    <h:panelGrid columns="2">
+                    Cuenta a Debitar:
+                    <h:selectOneMenu 
+                                    value="#{ mb.selectedAccount }" 
+                                    onchange="submit()" 
+                                    valueChangeListener="#{ mb.accountChange }">
+                    <f:selectItems value="#{ mb.account }" />
+                    </h:selectOneMenu>
+                    Saldo en Bsf:
+                    <h:outputText value="#{ mb.salary }"/>
+                    </h:panelGrid><br/><br/>                    
+                    
+                    <h:panelGrid columns="2" rendered="#{mb.t}">
+                    Cuenta a Transferir:
+                    <h:selectOneMenu 
+                                    value="#{ tb.selectedAccount }" 
+                                    onchange="submit()" 
+                                    valueChangeListener="#{ tb.accountChange }">
+                        <f:selectItems value="#{ tb.account }" />
+                    </h:selectOneMenu>
+                    
+                    </h:panelGrid><br/><br/> 
+                                        
+                    <!-- MOSTRAR CONTACTOS PARA TRANSFERIR -->
+                    <h:dataTable 
+                                    value=""
+                                    rendered="#{mb.t}"
+                                    var="">                
+                        <h:column>
+                            <f:facet name="header">Alias</f:facet>
+                            #{tb.alias}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Nombre</f:facet>
+                            #{tb.name}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">CI</f:facet>
+                            #{tb.id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Numero de Cuenta</f:facet>
+                            #{tb.naccount}
+                        </h:column>
+                    </h:dataTable><br/><br/>
+                    
+                    <!-- MOSTRAR FORMULARIO DE MONTO -->
+                    <h:outputLabel value="Monto a transferir: " />
+                    <h:inputText value="#{tb.trans}" rendered="#{mb.t}">
+                        <f:validateRequired />
+                        <f:validateDoubleRange minimum="0" maximum="#{tb.result}" />
+                    </h:inputText> <br/><br/>
+                    
+                    <h:commandButton value="Transferir" action="#{tb.falso()}"/>
+                    <h:outputLabel value="" rendered="#{tb.fal}">
+                        <br/><h4>Transferencia realizada de forma correcta por monto de #{tb.trans}<br/>
+                        Su saldo actual disponible es de #{tb.result}</h4><br/>
+                        </h:outputLabel>
+                    <h:commandButton value="Volver" action="dashboard" />
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!-- <h:outputStylesheet name="./../css/default.css"/>
+        <h:outputStylesheet name="./../css/cssLayout.css"/> -->
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="left" style="float: left;">
+            Hola Sr. Echenagucia
+            <h:form><h:commandButton value="Cerrar sesión" action="views/principal" /></h:form>
+            <h5>Opciones:</h5>
+            <ol>
+                <h:form>
+                    <li><h:commandButton value="Datos Personales" action="views/person_data" /></li>
+                    <li><h:commandButton value="Transferencias" action="views/transfers" /></li>
+                    <li><h:commandButton value="Operaciones" action="views/operations"/></li>
+                    <li><h:commandButton value="Consulta de movimientos" action="views/movements"/></li>
+                </h:form>
+            </ol>
+        </div>
+        <div id="content" class="left_content" style="float: left;">
+            <ui:insert name="content"></ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

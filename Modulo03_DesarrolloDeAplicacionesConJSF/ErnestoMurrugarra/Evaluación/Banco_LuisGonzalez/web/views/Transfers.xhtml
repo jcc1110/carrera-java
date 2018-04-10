@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+  <h:outputStylesheet name="css/w3.css"/> 
+    <body>
+
+        <ui:composition template="./../resources/template/ebank_template.xhtml">
+
+            <ui:define name="user">
+                Usuario Logueado
+            </ui:define>
+
+            <ui:define name="content">
+                
+                  
+                  <h:form>
+                       <!-- ESCOGER CUENTA A DEBTAR 
+                      #{tb.tranf()}
+                      <h:outputLabel value="N°Cuenta: #{tb.transObj.cuenta}"/><br/>
+                       
+                       <h:outputLabel value="Saldo: #{tb.transObj.saldo}"/><br/><br/>-->
+                      
+                      <!-- Tabla de informacion del cliente -->
+                      
+                      <h:dataTable 
+                          value="#{ tb.transLst }"
+                          rendered="#{ not empty tb.transLst }"
+                        var="infotabla" 
+                        styleClass="PersonTable"
+                        headerClass="PersonTableHeader"
+                        rowClasses="PersonTableOddRow, PersonTableEvenRow">                
+                <h:column>
+                    <f:facet name="header">Cuenta</f:facet>
+                    #{ infotabla.cuenta}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Balance disponible</f:facet>
+                    #{ infotabla.saldo }
+                </h:column>                
+                                 
+                       </h:dataTable>
+                      
+     <h1>AFILIADOS</h1>
+                    <!-- MOSTRAR CONTACTOS PARA TRANSFERIR -->
+                    <h:dataTable 
+                        value="#{ob.userLst}"
+                        rendered="#{not empty ob.userLst}"
+                                    var="Afiliados">                
+                        <h:column>
+                            <f:facet name="header">Nombre</f:facet>
+                          #{Afiliados.name}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Apellido</f:facet>
+                          #{Afiliados.lastname}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">CI</f:facet>
+                            #{Afiliados.ci}
+                        </h:column>
+                        
+                         <h:column>
+                    <f:facet name="header">Cuenta</f:facet>
+                    #{Afiliados.naccount}
+                </h:column>   
+                        
+                    </h:dataTable><br/><br/>
+                    
+                  
+                     <!--- Tabla para transferir del cliente-->
+                    
+                      <h:dataTable
+                          value="#{tb.transLst}"
+                          rendered="#{not empty tb.transLst}"
+                          var="cliente"
+                           styleClass="PersonTable"
+                        headerClass="PersonTableHeader"
+                        rowClasses="PersonTableOddRow, PersonTableEvenRow"> 
+                          <h:column>
+                    <f:facet name="header">Monto</f:facet>
+                    <h:inputText value="#{cliente.monto}"
+                                 size="10" rendered="#{cliente.canEdit}"/>
+                    <h:outputText value ="#{cliente.monto}"
+                                  rendered="#{not cliente.canEdit}"/>
+                </h:column>
+                             <h:column>
+                    <f:facet name="header">Descripcion</f:facet>
+                    <h:inputText value="#{cliente.descripcion}"
+                                 size="10" rendered="#{cliente.canEdit}"/>
+                    <h:outputText value ="#{cliente.descripcion}"
+                                  rendered="#{not cliente.canEdit}"/>
+                </h:column>
+             <h:column>
+                        <f:facet name = "header">Monto y Transferencia a colocar</f:facet>
+                        <h:commandButton value = "Monto y Transferencia a colocar" 
+                                         action = "#{tb.editTransferencia(tran)}" 
+                           rendered = "#{not cliente.canEdit}">        
+                           <f:setPropertyActionListener 
+                               target = "#{tb.transObj}" value = "#{cliente}" />
+                        </h:commandButton>
+                 </h:column>    
+                      </h:dataTable>
+                         <h:commandButton value = "Confirmar Monto"
+                                          action = "#{tb.saveTransferencia()}" />
+                      
+                        
+                
+                    
+                    <!-- MOSTRAR FORMULARIO DE MONTO 
+                    <h:outputLabel value="Monto a transferir: " />
+                    <h:inputText value="#{tb.transObj.monto}" label="Monto a Transferir" /><br/><br/>-->
+                    <br/><br/>
+                    <h:commandButton action="#{tb.montorest()}" value="Transferir"/>
+                    <h:commandButton value="CANCELAR" action="dashboard" />
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

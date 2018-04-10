@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../resources/template/ebank_template.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <!-- FORMULARIO -->
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="Nombre: " />
+                        <h:inputText value="" label="Nombre">
+                            <f:validateRequired />
+                        </h:inputText>
+
+                        <h:outputLabel value="Apellido: " />
+                        <h:inputText value="" label="Apellido">
+                            <f:validateRequired />
+                        </h:inputText>
+
+                        <h:outputLabel value="Género: " />
+                        <h:selectOneMenu value="" label="Género">
+                            <f:selectItem itemValue="" itemLabel="" />
+                            <f:selectItem itemValue="M" itemLabel="Masculino" />
+                            <f:selectItem itemValue="F" itemLabel="Femenino" />
+                            <f:validateRequired />
+                        </h:selectOneMenu>
+
+                        <h:outputLabel value="Dirección residencia: " />
+                        <h:inputText value="" label="Dirección residencia">
+                            <f:validateRequired />
+                        </h:inputText>
+                        
+                        <h:outputLabel value="Correo: " />
+                        <h:inputText value="" label="Correo">
+                            <f:validateRequired />
+                        </h:inputText>
+
+                        <h:commandButton value="Guardar" actionListener="#{ eb.addEmployee }" />
+                    </h:panelGrid>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

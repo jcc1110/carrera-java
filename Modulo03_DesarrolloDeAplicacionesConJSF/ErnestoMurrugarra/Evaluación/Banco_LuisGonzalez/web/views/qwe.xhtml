@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <h:outputStylesheet name="css/w3.css"/> 
+        
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text:700i|Roboto:300i" rel="stylesheet"></link>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil"></link>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+ <style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+
+.w3-myfont {
+   
+    font-family: 'Roboto', cursive, sans-serif;
+}
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+
+
+
+
+</style>
+        
+     </h:head>
+ 
+    <h:body>
+        <h:outputScript library="js" name="123.js" target="body"/>
+        <div class="w3-content" style="max-width:1500px">
+
+               <h:form>
+                        <div class="w3-bar w3-border w3-card-4 w3-blue">
+                         <a href="#" class="w3-bar-item w3-button w3-allerta" jsf:action="index">E-Bank</a>
+                         <a href="#" class="w3-bar-item w3-button w3-allerta" jsf:action="views/Principal">Principal</a>
+                         <a href="#" class="w3-bar-item w3-button w3-allerta" jsf:action="views/Services">Servicios</a>
+                         <a href="#" class="w3-bar-item w3-button w3-allerta" jsf:action="views/Contact">Contacto</a>
+                         <a href="#" class="w3-bar-item w3-button w3-right w3-allerta" jsf:action="views/authentication">Iniciar sesión</a>
+                       <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+                        </div> 
+                </h:form>
+            
+            
+          <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+      <h:graphicImage library="images" name="1candado.jpg" alt="candado" style="width:70%" class="w3-round-xxlarge">
+    <div class="w3-display-bottommiddle w3-container w3-text-black w3-padding-32 w3-hide-small">
+      <h3>E-Bank</h3>
+      <p><b>Tu banca Segura</b></p>   
+    </div>
+      </h:graphicImage>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <h:graphicImage library="images" name="1confianza.jpg" style="width:70%" class="w3-round-xxlarge">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>E-Bank</h3>
+      <p><b>Un Banco familiar</b></p> 
+    </div>
+    </h:graphicImage>   
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <h:graphicImage library="images" name="1rapidez.jpg"  style="width:70%" class="w3-round-xxlarge">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>E-Bank</h3>
+      <p><b>La Banca más rápida del mercado</b></p>    
+    </div>
+    </h:graphicImage>
+  </div>
+        </div>
+
+        <!-- The Contact Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+    <h2 class="w3-wide w3-center">CONTACTO</h2>
+    <p class="w3-opacity w3-center"><i>Asistencia rápida y segura</i></p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> Caracas, Venezuela<br/>
+        <i class="fa fa-phone" style="width:30px"></i> Telefono: 0212-232-55-81<br/>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: E-Bank@E-bank.com.ve<br/>
+      </div>
+      <div class="w3-col m6">
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Nombre" required="Name"></input>
+            </div>
+            <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Correo" required="Email"></input>
+            </div>
+          </div>
+            <input class="w3-input w3-border" type="text" placeholder="Mensaje" required="Message"></input>
+            <button class="w3-button w3-blue w3-section w3-right w3-round-xlarge"  type="submit"><b>Enviar</b></button>
+        </form>
+      </div>
+    </div>
+  </div>
+        
+        <!-- LOG IN-->
+        
+  <h2>LOG IN</h2>
+
+<form action="/action_page.php">
+  <div class=" w3-center">
+      <h:graphicImage library="images" name="avatar1.png" style="width:20%" alt="Avatar"></h:graphicImage>
+  </div>
+
+  <div class="container w3-center">
+    <label for="uname"><b>Nombre de usuario</b></label>
+    <input type="text" placeholder="Introduzca Nombre de usuario" required="name"></input><br/>
+
+    <label for="psw"><b>Contraseña</b></label>
+    <input type="password" placeholder="Introduzca contraseña" required="psw" ></input>
+        
+    <button  value="Entrar" action="dashboard"/>
+
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancelar</button>
+   
+  </div>
+</form>      
+        
+        
+    </h:body>
+</html>
+

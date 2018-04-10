@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="css/w3.css"/>
+        <title>E-Bank - Contacto</title>
+    </h:head>
+
+    <body>
+        <div class="top">
+
+            <h:form>
+                <div class="w3-table" ><a><h1>Echenagucia-Bank</h1></a></div>
+                <div class="w3-aqua w3-blue">
+
+                    <a href="#" class="w3-bar-item w3-button w3-bar" jsf:action="views/principal">Principal</a>
+                    <a href="#" class="w3-bar-item w3-button w3-bar" jsf:action="views/services">Servicios</a>                    
+                    <a href="#" class="w3-bar-item w3-button w3-right w3-bar " jsf:action="views/authentication">Iniciar Sesión</a>
+
+                </div>
+            </h:form>
+        </div>
+        <div id="content" class="w3-center">
+            <ui:insert name="content">
+                <p> 
+                    Dirección de oficina principal:<br/>
+                    Urbanizacion Nueva Casarapa<br/>
+                    Conjunto Cañaberal.
+                    Teléfonos:<br/>
+                    (0212) 362-2850 -> CANTV.<br/>
+                    (0412) 5850509 -> Fijo.<br/>
+                    <p> Escribenos a  <a href= "mailto:eduardonyx.ee@gmail.com"> eduardonyx.ee@gmail.com</a>
+
+                    </p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.435447328495!2d-66.59220368532345!3d10.466297842532445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2baae6c2e080d9%3A0xe820c87f50192585!2sEl+Tabl%C3%B3n%2C+Guarenas+1220%2C+Miranda!5e0!3m2!1ses-419!2sve!4v1522560037547" width="600" height="450" frameborder="0" style="border:0" ></iframe>                
+                </p> 
+            </ui:insert>
+        </div>
+
+    </body>
+</html>

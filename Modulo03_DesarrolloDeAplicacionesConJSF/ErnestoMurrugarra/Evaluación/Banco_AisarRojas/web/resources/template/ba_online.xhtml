@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="css/bootstrap.min.css"/>
+        <h:outputStylesheet name="css/footer.css"/>
+        <h:outputStylesheet name="css/w3.css"/>
+        
+    </h:head>
+
+    <h:body>
+        <section id="top">
+            <ui:insert name="top">
+                <h:form>
+                <div class="w3-bar w3-black">
+                    <a href="#" class="w3-bar-item w3-button" jsf:action="views/afiliacion"><h6><strong>Afiliación de Cuentas</strong></h6></a>
+                    <a href="#" class="w3-bar-item w3-button" jsf:action="views/transfers"><h6><strong>Transferencias</strong></h6></a>
+                    <a href="#" class="w3-bar-item w3-button" jsf:action="views/movements"><h6><strong>Movimientos Bancarios</strong></h6></a>                  
+                    <a href="#" class="w3-bar-item w3-button w3-right" jsf:action="views/cerrar_sesion"><h6><strong>Cerrar Sesión</strong></h6></a>                  
+                </div>
+            </h:form>
+            </ui:insert>
+        </section>
+
+        <section id="content" class="center_content">
+            <ui:insert name="content">
+                <article class="container">
+                <h3 class="text-info">Opciones:</h3>
+                <hr />
+                </article>
+            </ui:insert>
+        </section>
+
+        <section id="bottom">
+            <ui:insert name="bottom">
+                <div class="footer-copyright py-3 text-center footerpart" style="background-color: black; color: whitesmoke">
+                    Por motivos de seguridad le recomendamos no decir su usuario y/o contraseña a nadie, tampoco acepte ayuda de desconocidos para entrar a la banca online. Banco Aisar no se hace responsable por la perdida de información.
+                </div>
+            </ui:insert>
+        </section>
+
+    </h:body>
+
+</html>

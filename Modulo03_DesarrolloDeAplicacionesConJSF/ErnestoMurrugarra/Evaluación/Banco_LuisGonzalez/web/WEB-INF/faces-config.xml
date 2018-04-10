@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+<!-- Reglas de navegacion-->
+   <!-- Navegacion de la vista principal -->
+    <navigation-rule>
+        <from-view-id>views/Principal.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>views/Services</from-action>
+            <to-view-id>views/Services.xhtml</to-view-id>
+        </navigation-case>
+                
+        <navigation-case>
+                <from-action>views/Contact</from-action>
+            <to-view-id>views/Contact.xhtml</to-view-id>
+        </navigation-case>
+        
+         <navigation-case>
+            <from-action>views/authentication</from-action>
+            <to-view-id>views/authentication.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+                <from-action>index</from-action>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+                                                   
+        <navigation-case>
+                <from-action>views/Principal</from-action>
+            <to-view-id>views/Principal.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+       <!-- Navegacion de la vista servicio-->
+        <navigation-rule>
+        <from-view-id>views/Services.xhtml</from-view-id>
+              
+        <navigation-case>
+            <from-action>views/Principal</from-action>
+            <to-view-id>views/Principal.xhtml</to-view-id>
+        </navigation-case>
+        
+         <navigation-case>
+             
+         <from-action>views/Contact</from-action>
+         <to-view-id>views/Contact.xhtml</to-view-id>
+         
+        </navigation-case> 
+        
+         <navigation-case>
+            <from-action>views/authentication</from-action>
+            <to-view-id>views/authentication.xhtml</to-view-id>
+        </navigation-case>
+                
+        <navigation-case>
+                <from-action>index</from-action>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+                
+                
+                <navigation-case>
+            <from-action>views/Services</from-action>
+            <to-view-id>views/Services.xhtml</to-view-id>
+        </navigation-case>
+                
+    </navigation-rule>
+    
+    <!-- Navegacion de la vista contacto -->
+        <navigation-rule>
+        <from-view-id>views/Contact.xhtml</from-view-id>
+        <navigation-case>
+             <from-action>views/Principal</from-action>
+            <to-view-id>views/Principal.xhtml</to-view-id>           
+        </navigation-case>
+        
+        
+                <navigation-case>
+            <from-action>views/Services</from-action>
+            <to-view-id>views/Services.xhtml</to-view-id>
+        </navigation-case>
+        
+                        <navigation-case>
+            <from-action>views/authentication</from-action>
+            <to-view-id>views/authentication.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+                <from-action>index</from-action>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+        
+                <navigation-case>
+             
+         <from-action>views/Contact</from-action>
+         <to-view-id>views/Contact.xhtml</to-view-id>
+         
+        </navigation-case>       
+                   
+        </navigation-rule>
+    
+        
+    <!-- Navegacion de la vista Authentication -->
+        <navigation-rule>
+        <from-view-id>views/authentication.xhtml</from-view-id>
+       
+        <navigation-case>
+             <from-action>index</from-action>
+            <to-view-id>views/Principal.xhtml</to-view-id>           
+        </navigation-case>
+                
+                <navigation-case>
+            <from-action>views/dashboard</from-action>
+            <to-view-id>views/dashboard.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+                <from-action>index</from-action>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+   
+    
+         <navigation-case>
+            <from-action>views/authentication</from-action>
+            <to-view-id>views/authentication.xhtml</to-view-id>
+        </navigation-case>
+                
+   
+    </navigation-rule>
+
+  <!-- Navegacion de la vista dashboard -->
+        <navigation-rule>
+        <from-view-id>views/dashboard.xhtml</from-view-id>
+        <navigation-case>
+             <from-action>views/person_data</from-action>
+            <to-view-id>views/person_data.xhtml</to-view-id>           
+        </navigation-case>
+                
+                <navigation-case>
+            <from-action>views/dashboard</from-action>
+            <to-view-id>views/dashboard.xhtml</to-view-id>
+        </navigation-case>
+              
+                   <navigation-case>
+            <from-action>index</from-action>
+            <to-view-id>views/Principal.xhtml</to-view-id>
+        </navigation-case>      
+        
+        <navigation-case>
+                <from-action>index</from-action>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+        
+                     <navigation-case>
+            <from-action>views/Operation</from-action>
+            <to-view-id>views/Operation.xhtml</to-view-id>
+        </navigation-case>   
+                                  
+                     <navigation-case>
+            <from-action>views/Transfers</from-action>
+            <to-view-id>views/Transfers.xhtml</to-view-id>
+        </navigation-case>   
+              
+                     <navigation-case>
+            <from-action>views/Movements</from-action>
+            <to-view-id>views/Movements.xhtml</to-view-id>
+        </navigation-case>   
+                                            
+                             
+    </navigation-rule>
+
+    <navigation-rule>
+                <!-- OPERACION -->          
+        <from-view-id>views/Operation.xhtml</from-view-id>
+                 
+      <navigation-case>
+            <from-action>views/Transfers</from-action>
+            <to-view-id>views/Transfers.xhtml</to-view-id>
+       </navigation-case>   
+                  
+      <navigation-case>
+            <from-action>views/Movements</from-action>
+            <to-view-id>views/Movements.xhtml</to-view-id>
+       </navigation-case>   
+                 
+      <navigation-case>
+            <from-action>views/person_data</from-action>
+            <to-view-id>views/person_data.xhtml</to-view-id>
+            
+       </navigation-case>   
+                             
+      <navigation-case>
+            <from-action>views/dashboard</from-action>
+            <to-view-id>views/dashboard.xhtml</to-view-id>
+       </navigation-case>   
+                           
+      <navigation-case>
+            <from-action>views/Operation</from-action>
+            <to-view-id>views/Operation.xhtml</to-view-id>
+       </navigation-case>   
+                               
+      <navigation-case>
+            <from-action>index</from-action>
+            <to-view-id>index.xhtml</to-view-id>
+       </navigation-case>   
+            
+    </navigation-rule>
+<!-- TRANSFERENCIA-->
+    <navigation-rule>
+        <from-view-id>views/Transfers.xhtml</from-view-id>
+                         
+      <navigation-case>
+            <from-action>views/Transfers</from-action>
+            <to-view-id>views/Transfers.xhtml</to-view-id>
+       </navigation-case>   
+                       
+      <navigation-case>
+            <from-action>views/Operation</from-action>
+            <to-view-id>views/Operation.xhtml</to-view-id>
+       </navigation-case>   
+                     
+      <navigation-case>
+            <from-action>views/Movements</from-action>
+            <to-view-id>views/Movements.xhtml</to-view-id>
+       </navigation-case>   
+                                   
+      <navigation-case>
+            <from-action>index</from-action>
+            <to-view-id>index.xhtml</to-view-id>
+       </navigation-case>   
+                                           
+      <navigation-case>
+            <from-action>views/person_data</from-action>
+            <to-view-id>views/person_data.xhtml</to-view-id>
+       </navigation-case>   
+                                                                
+    </navigation-rule>
+    
+    <!-- MOVIMIENTOS-->
+    
+    <navigation-rule>
+        <from-view-id>views/Movements.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>views/Operation</from-action>
+            <to-view-id>views/Operation.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-action>views/Transfers</from-action>
+            <to-view-id>views/Transfers.xhtml</to-view-id>
+            
+        </navigation-case>
+          
+        <navigation-case>
+            <from-action>views/Movements</from-action>
+            <to-view-id>views/Movements.xhtml</to-view-id>
+            
+        </navigation-case>
+              
+        <navigation-case>
+            <from-action>index</from-action>
+            <to-view-id>index.xhtml</to-view-id>
+            
+        </navigation-case>
+            
+        <navigation-case>
+            <from-action>views/person_data</from-action>
+            <to-view-id>views/person_data.xhtml</to-view-id>
+            
+        </navigation-case>
+    
+    </navigation-rule>
+    
+    <!-- PERSON DATA-->
+    <navigation-rule>
+        <from-view-id>views/person_data.xhtml</from-view-id>
+       
+        <navigation-case>
+            <from-action>views/Operation</from-action>
+            <to-view-id>views/Operation.xhtml</to-view-id>
+        </navigation-case>
+               
+        <navigation-case>
+            <from-action>views/Transfers</from-action>
+            <to-view-id>views/Transfers.xhtml</to-view-id>
+        </navigation-case>
+       
+        <navigation-case>
+            <from-action>views/Movements</from-action>
+            <to-view-id>views/Movements.xhtml</to-view-id>
+        </navigation-case>
+
+       
+        <navigation-case>
+            <from-action>views/person_data</from-action>
+            <to-view-id>views/person_data.xhtml</to-view-id>
+        </navigation-case>
+               
+        <navigation-case>
+            <from-action>index</from-action>
+            <to-view-id>index.xhtml</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+</faces-config>

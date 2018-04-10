@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../resources/template/ebank_template.xhtml">
+
+            <ui:define name="user">
+                user
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form>
+                    <h2>Afiliación de cuentas</h2>
+                    <!-- Agregar-->
+     <h:panelGrid columns="2">
+                <h:outputLabel value="Nombre: " />
+                <h:inputText value="#{ob.userObj.name }" label="asd">
+                    <f:validateRequired />
+                </h:inputText>
+                
+                <h:outputLabel value="Apellido: " />
+                <h:inputText value="#{ob.userObj.lastname }" label="Apellido">
+                    <f:validateRequired />
+                </h:inputText>
+
+                
+                <h:outputLabel value="CI: " />
+                <h:inputText value="#{ob.userObj.ci }" label="CI">
+                    <f:validateRequired />
+                </h:inputText>
+             
+                
+                <h:outputLabel value="N°Cuenta: " />
+                <h:inputText value="#{ob.userObj.naccount }" label="N°Cuenta">
+                    <f:validateRequired />
+                </h:inputText>
+                
+                <h:commandButton value="Guardar" actionListener="#{ ob.addUser() }" />
+            </h:panelGrid>                
+                </h:form>
+                
+                <br/>
+                    <h:form>
+                        <!--   Modificar-->
+                                    <h:dataTable 
+                      value="#{ob.userLst }"
+                rendered="#{ not empty ob.userLst }"
+                        var="User" 
+                        styleClass="PersonTable"
+                        headerClass="PersonTableHeader"
+                        rowClasses="PersonTableOddRow, PersonTableEvenRow">                
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    <h:inputText value="#{User.name}"
+                                 size="10" rendered="#{User.canEdit}"/>
+                    <h:outputText value ="#{User.name}"
+                                  rendered="#{not User.canEdit}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Apellido</f:facet>
+
+                    <h:inputText value="#{User.lastname }"
+                                 size="20" rendered="#{User.canEdit}"/>
+                    <h:outputText value ="#{User.lastname}"
+                                  rendered="#{not User.canEdit}"/>                    
+                </h:column>    
+                                        
+                <h:column>
+                    <f:facet name="header">Ci</f:facet>
+                    
+                    <h:inputText value="#{User.ci }"
+                                 size="20" rendered="#{User.canEdit}"/>
+                    <h:outputText value ="#{User.ci}"
+                                  rendered="#{not User.canEdit}"/>                      
+                </h:column>   
+                  
+                <h:column>
+                    <f:facet name="header">Cuenta</f:facet>
+                    
+                     <h:inputText value="#{User.naccount }"
+                                 size="10" rendered="#{User.canEdit}"/>
+                    <h:outputText value ="#{User.naccount }"
+                                  rendered="#{not User.canEdit}"/>                       
+                </h:column>     
+                
+                <h:column>
+                        <f:facet name = "header">Editar</f:facet>
+                        <h:commandButton value = "Editar" 
+                                         action = "#{ob.editUser(usuario)}" 
+                           rendered = "#{not User.canEdit}">        
+                           <f:setPropertyActionListener 
+                               target = "#{ob.userObj}" value = "#{User}" />
+                        </h:commandButton>
+                 </h:column>     
+                                        
+              <h:column>
+            <f:facet name="header">Acciones</f:facet>
+            <h:commandLink value="Eliminar" actionListener="#{ob.deleteUser(User)}" />                                       
+                                            
+             </h:column>
+                                        
+            </h:dataTable>
+                        <br/>
+                         <h:commandButton value = "Guardar Cambios"
+                                          action = "#{ob.saveUser()}" />
+                    
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

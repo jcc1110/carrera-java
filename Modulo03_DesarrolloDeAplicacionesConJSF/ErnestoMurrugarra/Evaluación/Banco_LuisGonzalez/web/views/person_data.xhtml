@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+        <h:outputStylesheet library="css" name="styles.css"/>
+        <ui:composition template="./../resources/template/ebank_template.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+            <!-- Atributos necesarios para que el dataTable funcione (en este ejemplo) -->
+            <h1>Datos personales</h1>
+            <h:dataTable 
+                value="#{ pb.personaLst }"
+                rendered="#{ not empty pb.personaLst }"
+                        var="Persona" 
+                        styleClass="PersonTable"
+                        headerClass="PersonTableHeader"
+                        rowClasses="PersonTableOddRow, PersonTableEvenRow">                
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    #{ Persona.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Apellido</f:facet>
+                    #{ Persona.lastname }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Ci</f:facet>
+                    #{ Persona.ci }
+                </h:column>   
+
+                </h:dataTable>
+            
+            <!-- tabla balance-->
+            
+              <h:dataTable 
+                          value="#{ tb.transLst }"
+                          rendered="#{ not empty tb.transLst }"
+                        var="infotabla" 
+                        styleClass="PersonTable"
+                        headerClass="PersonTableHeader"
+                        rowClasses="PersonTableOddRow, PersonTableEvenRow">                
+                <h:column>
+                    <f:facet name="header">Cuenta</f:facet>
+                    #{ infotabla.cuenta}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Balance disponible</f:facet>
+                    #{ infotabla.saldo }
+                </h:column>       
+              </h:dataTable>
+                  
+                  <!-- Modificar usuario -->
+                  <h:dataTable
+                      value="#{lg.personLst}"
+                      rendered="#{not empty lg.personLst}"
+                          var="log"
+                           styleClass="PersonTable"
+                        headerClass="PersonTableHeader"
+                        rowClasses="PersonTableOddRow, PersonTableEvenRow"> 
+                          <h:column>
+                    <f:facet name="header">Nombre de Usuario</f:facet>
+                    <h:inputText value="#{log.username}"
+                                 size="10" rendered="#{log.canEdit}"/>
+                    <h:outputText value ="#{log.username}"
+                                  rendered="#{not log.canEdit}"/>
+                </h:column>
+                             <h:column>
+                    <f:facet name="header">Contraseña</f:facet>
+                    <h:inputText value="#{log.psw}"
+                                 size="10" rendered="#{log.canEdit}"/>
+                    <h:outputText value ="#{log.psw}"
+                                  rendered="#{not log.canEdit}"/>
+                </h:column>
+             <h:column>
+                        <f:facet name = "header">Cambiar Usuario y/o Clave</f:facet>
+                        <h:commandButton value = "Cambiar Usuario y/o Clave" 
+                                         action = "#{lg.editLog(persona)}" 
+                           rendered = "#{not log.canEdit}">        
+                           <f:setPropertyActionListener 
+                               target = "#{lg.personObj}" value = "#{log}" />
+                        </h:commandButton>
+                 </h:column>    
+                      </h:dataTable>
+                         <h:commandButton value = "Confirmar"
+                                          action = "#{lg.saveLog()}" />
+                            
+        </h:form>
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

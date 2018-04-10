@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!-- <h:outputStylesheet name="./css/default.css"/> -->
+        <!-- <h:outputStylesheet name="./css/cssLayout.css"/> -->
+            <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet"></link>
+        <title>E-Bank</title>
+        <h:outputStylesheet name="css/w3.css"/>
+    </h:head>
+
+    <h:body>
+        <!-- Header de app -->
+        <div class="top">
+
+            <h:form>
+                <div class="w3-table" ><a><h1>Echenagucia-Bank</h1></a></div>
+                <div class="w3-aqua w3-blue">
+                    
+                    <a href="#" class="w3-bar-item w3-button w3-bar" jsf:action="views/principal">Principal</a>
+                    <a href="#" class="w3-bar-item w3-button w3-bar" jsf:action="views/services">Servicios</a>
+                    <a href="#" class="w3-bar-item w3-button w3-bar" jsf:action="views/contact">Contacto</a>
+                    <a href="#" class="w3-bar-item w3-button w3-bar " jsf:action="views/authentication">Iniciar Sesión</a>
+                    
+                </div>
+            </h:form>
+        </div>
+        <!-- Header de app -->
+        
+        <div>
+            <div id="content" class="left_content w3-margin w3-round">
+                <ui:insert name="content">
+                    
+                    
+                    
+                    <div id="content" class="w3-animate-opacity w3-center w3-margin-top"  >
+                        
+                        <h1 class="w3-font-family w3-text-blue"> Bienvenido a Echenagucia Bank </h1>
+                    
+                    <h2>Donde tu dinero esta seguro y seguro se multiplica</h2>
+                    </div>
+                </ui:insert>
+            </div>
+        </div>
+    </h:body>
+</html>

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   
+    
+    <body>
+        <ui:composition template="./../resources/template/ebank_template.xhtml">
+
+            
+            <ui:define name="content">
+                <h:form>
+                    <!-- FORMULARIO -->
+                    <h:panelGrid columns="2" rendered="#{af.false1}">
+                        <h:outputLabel value="Nombre: " />
+                        <h:inputText value="#{ af.afmodel.name }" label="Nombre">
+                            <f:validateRequired />
+                        </h:inputText>
+
+                        <h:outputLabel value="Apellido: " />
+                        <h:inputText value="#{ af.afmodel.lastname }" label="Apellido">                            
+                            <f:validateRequired />
+                        </h:inputText>
+                        
+                        <h:outputLabel value="Cedula Tipo: " />
+                        <h:selectOneMenu value="#{ af.afmodel.id_type }" label="Cedula Tipo">                            
+                            <f:selectItem itemValue="V" itemLabel="V" />
+                            <f:selectItem itemValue="E" itemLabel="E" />
+                            <f:selectItem itemValue="J" itemLabel="J" />
+                            <f:validateRequired />
+                        </h:selectOneMenu>
+                        
+                        <h:outputLabel value="Cedula: " />
+                        <h:inputText value="#{ af.afmodel.id }" label="Cedula">
+                            <f:validateRequired />
+                        </h:inputText>
+                        
+                        <h:outputLabel value="Banco: " />
+                        <h:selectOneMenu value="#{ af.afmodel.bank }" label="Banco">
+                            <f:selectItem itemValue="" itemLabel="" />
+                            <f:selectItem itemValue="B" itemLabel="Banesco" />
+                            <f:selectItem itemValue="M" itemLabel="Mercantil" />
+                            <f:validateRequired />
+                        </h:selectOneMenu>
+
+                        <h:outputLabel value="Tipo de Cuenta: " />
+                        <h:selectOneMenu value="#{ af.afmodel.account_type }" label="Cuenta">
+                            <f:selectItem itemValue="" itemLabel="" />
+                            <f:selectItem itemValue="C" itemLabel="Corriente" />
+                            <f:selectItem itemValue="A" itemLabel="Ahorro" />
+                            <f:validateRequired />
+                        </h:selectOneMenu>
+
+                        <h:outputLabel value="Numero de Cuenta: " />
+                        <h:inputText value="#{ af.afmodel.account_number }" label="Numero de Cuenta">
+                            <f:validateRequired />
+                        </h:inputText>                        
+                        <h:commandButton value="Guardar"  action="#{af.change()}" />                        
+                    </h:panelGrid>                   
+                    
+            
+                </h:form>
+                
+                <h:form>
+            <h:outputStylesheet library="css" name="styles.css" />
+            <br/><h2>Cuentas Afiliadas</h2>
+            <h:dataTable 
+                        value="#{ af.afmodelLst }"
+                        rendered="true"
+                        var="afi" 
+                        styleClass="employeeTable"
+                        headerClass="employeeTableHeader"
+                        rowClasses="employeeTableOddRow, employeeTableEvenRow">                
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    #{ afi.name }
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Apellido</f:facet>
+                    #{ afi.lastname }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Tipo C.I</f:facet>
+                    #{ afi.id_type }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Cedula</f:facet>
+                    #{ afi.id }
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Banco</f:facet>
+                    #{ afi.bank }
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Tipo de Cuenta</f:facet>
+                    #{ afi.account_type }
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Numero de Cuenta</f:facet>
+                    #{ afi.account_number }
+                </h:column>                
+             </h:dataTable>            
+             </h:form>
+             </ui:define>                         
+       </ui:composition>
+        
+
+    </body>
+ 
+</html>
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <body>
+        <ui:composition template="./../resources/template/Banco_template.xhtml">
+            <ui:define name="user">
+                olivolacroix
+            </ui:define>
+            <ui:define name="content">
+                <h3>Movimientos bancarios del mes!</h3>
+                <!-- MOSTRAR CONTACTOS PARA TRANSFERIR -->
+                <h:dataTable 
+                                value=""
+                                rendered="true"
+                                var="">                
+                    <h:column>
+                        <f:facet name="header">Fecha</f:facet>
+                        04/03/2018
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Operación</f:facet>
+                        Depósito
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Monto</f:facet>
+                        +5.000.000,00.
+                    </h:column>
+                </h:dataTable><br/><br/>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
